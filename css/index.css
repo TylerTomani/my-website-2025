@@ -8,23 +8,22 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 1.75%;
+    /* gap: 1.75%; */
 }
 main > *{
     flex-basis: 47.5%;
-    margin: 1.25% 0;
+}
+main > .topics-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 1%; */
+    /* gap: 2.5%; */
 }
 .topics-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 1%;
-    gap: 2.5%;
-}
-.topics-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1%;
-    gap: 2.5%;
+    /* margin: 1%; */
+    /* gap: 2.5%; */
 }
 .sub-topics {
     display: flex;
