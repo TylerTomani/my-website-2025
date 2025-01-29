@@ -1,0 +1,64 @@
+.copy-code {
+    white-space: normal;
+}
+.topic-questions {
+    margin: 0 1.5%;
+}
+.dropQuestion {
+    text-decoration: none;
+    width: 80%;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 5%;
+    margin-bottom: 1%;
+}
+.question-answer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;    
+    /* background-color: yellow; */
+    font-family: 
+    'ui-sans-serif','-apple-system','system-ui','Segoe UI',
+    'Helvetica','Arial','sans-serif';       
+}
+.question-answer >.question-txt{
+    border-radius: 10px;
+    margin-bottom: 1%;
+    padding: 1%;   
+    margin-left: 30%;
+}
+.question-txt > .text-base > .whitespace-pre-wrap {
+    background-color: whitesmoke;
+    border: 1px solid lavender;
+    line-height: 1.33;
+    font-style: bold;
+    font-weight: 550;
+    font-size: 95%;
+    width: 100%;
+}
+.question-txt >.text-base>.whitespace-pre-wrap> .copy-code {
+    width: 100%;
+    padding: 1% 2%;
+    /* text-wrap: wrap; */
+    white-space: wrap;
+}
+.hide {
+    display: none;
+}
+@media screen and (min-width:700) {
+    body {
+        background-color: blue;
+    }
+    .question-answer >.question-txt{
+        background-color: blue;
+    }
+}
+@media screen and(max-width:600) {
+    .question-txt >.text-base>.whitespace-pre-wrap> .copy-code {
+        word-wrap: wrap;
+    }
+    
+    
+}

@@ -1,0 +1,52 @@
+
+main {
+    display: flex;
+}
+.draggable h2 {
+    font-size: 1rem;
+}
+.draggable.active  .chatgpt-header-icons {
+    width: 20%;
+}
+.draggable.active {
+    /* position: absolute; */
+    width: 20%;
+    border-right: 2px solid black;
+    background-color: lightgrey;
+    transition: all 300ms;
+}
+.draggable {
+    /* position: absolute; */
+    width: 0%;
+    border-right: 2px solid black;
+    background-color: lightgrey;
+    transition: all 300ms;
+}
+.draggable.active *{
+    /* position: absolute; */
+    display: block;
+    transition: all 300ms;
+}
+
+.draggable * {
+    /* position: absolute; */
+    display: none;
+    transition: all 300ms;
+}
+.draggable.active ~ #mainTargetDiv{
+    width: 80%;
+}
+
+ #mainTargetDiv{
+    /* position: absolute; */
+    width: 90%;
+}
+
+.text-token-text-primary {
+    /* margin: 0 5%; */
+}
+#newQuestionBtn:active,#newQuestionBtn:focus,
+#toggleSideBtn:active,#toggleSideBtn:focus{
+    box-shadow:  0 0 4px 5px lightcyan;
+}
+
