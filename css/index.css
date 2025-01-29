@@ -42,25 +42,22 @@ main>.topic>a.drop-topic {
     text-decoration: none;
     width: 50%;
 }
-.project {
-    max-height: 20vh;
+.topics-container > .project {
     display: block;
     text-decoration: none;
     color: black;
     flex-basis: 10%;
     border: 1px solid black;
     height: fit-content;
-    min-height: 10vh;
-    height: 100%;
     padding: 1%;
-    width: fit-content;
-    /* font-size: 70%; */
+    max-height: 20vh;
+    font-size: 70%;
 }
 .project img {
     width: 100%;
     /* border: 2px solid black; */
-    height: 100%;
-    /* object-fit: cover; */
+    height: 90%;
+    object-fit: cover;
 }
 .drop-topic:active,.drop-topic:focus,
 .project:active,.project:focus{
