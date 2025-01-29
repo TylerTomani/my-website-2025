@@ -7,48 +7,54 @@ main{
     margin: 1%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    /* gap: 1.75%; */
 }
-main > *{
+main > .topic{
     flex-basis: 47.5%;
+    margin: 1%;
 }
-main > .topics-container {
+main > .topic > .topics-container {
     display: flex;
     flex-wrap: wrap;
-    /* margin: 1%; */
-    /* gap: 2.5%; */
 }
 .topics-container {
     display: flex;
     flex-wrap: wrap;
-    /* margin: 1%; */
-    /* gap: 2.5%; */
 }
 .sub-topics {
     display: flex;
-    /* flex-wrap: wrap; */
-    gap: .25%;
-    margin: 0;
+    margin: .5% ;
+    
 }
-.topic a.drop-topic {
-    border: 2px solid blue;
-    display: inline-block;
-    text-decoration: none;
+.sub-topics > .topic{
     display: flex;
-
+    flex-basis: 47%;
+    flex-direction: column;
+    margin: .5% .5%;
+}
+main>.topic>a.drop-topic {
+    border: 2px solid black;
+    display: inline-flex;
+    text-decoration: none;
+    width: 50%;
+}
+.sub-topics > .topic a.drop-topic {
+    display: inline-flex;
+    text-decoration: none;
+    width: 50%;
 }
 .project {
+    max-height: 20vh;
     display: block;
     text-decoration: none;
     color: black;
     flex-basis: 10%;
-    border: 1px solid blue;
+    border: 1px solid black;
     height: fit-content;
     min-height: 10vh;
+    height: 100%;
     padding: 1%;
-    /* margin: 1.25% 0; */
-    font-size: 70%;
+    width: fit-content;
+    /* font-size: 70%; */
 }
 .project img {
     width: 100%;
