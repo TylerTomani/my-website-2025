@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.addEventListener("keydown", (event) => {
         const key = event.key.toLowerCase();
+        let letter = e.key.toLowerCase()
+        if(letter == 'h'){
+            const homelink = document.querySelector('.homelink');
+            homelink.focus()
+            
+        }
+        
         const isShift = event.shiftKey;
         if (monthMap[key]) {
             event.preventDefault();
