@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.addEventListener("keydown", (event) => {
         const key = event.key.toLowerCase();
-        let letter = e.key.toLowerCase()
+        let letter = event.key.toLowerCase()
         if(letter == 'h'){
             const homelink = document.querySelector('.homelink');
             homelink.focus()
