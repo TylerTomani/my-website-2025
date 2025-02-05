@@ -13,18 +13,19 @@ let mainTargetDivFocused = false
 addEventListener('DOMContentLoaded', e => {
 
 })
-mainTargetDiv.addEventListener('focus', e => {
-    mainTargetDivFocused = true
-})
-mainTargetDiv.addEventListener('focusout', e => {
-    mainTargetDivFocused = false
-})
+if(mainTargetDiv){
+
+    mainTargetDiv.addEventListener('focus', e => {
+        mainTargetDivFocused = true
+    })
+    mainTargetDiv.addEventListener('focusout', e => {
+        mainTargetDivFocused = false
+    })
+}
 addEventListener('keydown', e => {
     let letter = e.key.toLowerCase()
     letterIds = []
-
     if (!mainTargetDivFocused){
-
         allIdEls.forEach(el => {
             if (letter == el.id[0].toLowerCase() && !el.classList.contains('hide')) {
                 letterIds.push(el)
