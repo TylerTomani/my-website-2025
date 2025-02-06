@@ -1,0 +1,14 @@
+body > nav > ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+body > nav > ul li{
+    border: 1px solid black;
+    border-bottom: none;
+    flex-basis: 25%;
+    font-size: 120%;
+}
+body > nav > ul li a{
+    text-decoration: none;
+}

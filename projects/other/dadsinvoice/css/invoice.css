@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding:0;
+}
+#invoiceHeading{
+    display: flex;
+    justify-content: flex-end;
+}
+#invoice-container{
+    width: 100%;
+    border: 2px solid red;
+}
+select {
+    border: 1px solid black;
+}
+select:active,
+select:focus {
+    border: 10px solid red;
+    box-shadow: 2px 4px 1px 5px blue;
+}
+#invoice_heading {
+    text-align: right;
+    position: relative;
+    right: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 8px;
+    width: 250px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-family: arial;
+    font-size: 28px;
+    color: #808080;
+}
+.to-from-container {
+    display: flex;
+    /* border: 2px solid blue; */
+    width: 100%;
+}
+.to-from-container h3{
+    font-size: 18px;
+    font-family: verdana;
+    color: #3c3c3c;
+}
+.to-from-container > #to,
+.to-from-container>#from {
+    flex-basis: 50%;
+    width: 50%;
+}
+.to-from-container > #to{
+}
+#to_name,
+#from_name {
+    border: 1px solid black;
+    width: 100%;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    font-weight: normal;
+    font-family: verdana;
+    font-size: 13px;
+    color: #3c3c3c;
+}
+#to_address,
+#from_address {
+    width: 100%;
+    overflow: auto;
+    outline: none;
+    padding: 5px;
+    font-weight: normal;
+    font-family: verdana;
+    font-size: 13px;
+    color: silver;
+}
+#from_address {
+font-family: verdana;
+    font-size: 13px;
+    color: rgb(60, 60, 60);
+    background-color: rgb(255, 255, 255);
+    
+}
+#to_new_customer{
+    border: 1px solid black;
+    width: 100%;
+    padding: 2% 0;
+    padding-left: 7px;
+    font-weight: normal;
+    font-family: verdana;
+    font-size: 13px;
+    color: silver;
+}
+#invoice_num_container {
+    display: flex;
+}
+
+#to_nameTD>select {
+
+}
+
+#invoice_num_container {
+}
+#invoice_num,
+#invoice_date,
+#invoice_due_date {
+
+}
+
+#number_label,
+#date_label,
+#invoice_due_date {
+}
+
+.invoiceForm_fromNameTD {
+}
+
+.invoiceForm_fromNameTD input {
+}

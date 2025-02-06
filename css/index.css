@@ -12,70 +12,49 @@ main{
     flex-direction: column;
 }
 main > .topic{
-    flex-basis: 47.5%;
     margin: 1%;
 }
+.topic>.topics-container>.topic>a.drop-topic,
 main>.topic>a.drop-topic {
-    border: 2px solid black;
     display: inline-flex;
     text-decoration: none;
-    width: 50%;
-}
-.topic > .topics-container > .topic{
-    border: 2px solid magenta;
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
 }
 
-.topics-container > .project {
-    /* text-decoration: none; */
-    /* padding: 1%; */
-    /* color: black; */
-    /* flex-basis: 5%; */
-    /* border: 1px solid blue; */
-    /* height: fit-content;     */
-    /* font-size: 70%; */
-    /* flex: 1; */
+
+.topics-container  {
+    width: 70%;
+    border: 2px dashed black;   
+    display: flex;
+    flex-wrap: wrap;
+}
+.topic>.topics-container>.topic {
+    margin: 1%;
+    display: flex;
+    flex-basis: 49;
+    flex-direction: column;
+}
+.sub-topics-container {
+    display: flex;
+    margin: .5%;
+}
+.sub-topics-container > .project {
+    font-size: 70%;
+    text-decoration: none;
+    border: 1px solid black;
+    display: flex;
+    flex-basis: 15%;
+    flex-direction: column;
+    margin: .5% .5%;
+}
+.drop-topic:active,.drop-topic:focus,
+.project:active,.project:focus{
+    box-shadow: 0 0 20px 2px orange;
 }
 .project img {
     display: none;
     max-height: 30px;
     width: 100%;
     height: 90%;
-}
-.sub-topics-container {
-    display: flex;
-    margin: .5%;
-    border: 2px solid orange;
-}
-
-.sub-topics-container > .project {
-    display: flex;
-    flex-basis: 27.5%;
-    flex-direction: column;
-    margin: .5% .5%;
-}
-.sub-topics-container > .topic a.drop-topic {
-    display: inline-flex;
-    text-decoration: none;
-    width: 50%;
-}
-.topics-container>.project {
-    /* text-decoration: none;
-    padding: 1%;
-    color: black;
-    flex-basis: 10%;
-    border: 1px solid blue;
-    display: block;
-    height: fit-content;
-    font-size: 70%; */
-}
-
-
-.drop-topic:active,.drop-topic:focus,
-.project:active,.project:focus{
-    box-shadow: 0 0 20px 2px orange;
 }
 .hide{
     display: none ;
