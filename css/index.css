@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{display: flex;}
+header > * {}
+header > .vid-container{border: 1px solid black;}
 main{
     margin: 1%;
     display: flex;
@@ -12,59 +15,68 @@ main > .topic{
     flex-basis: 47.5%;
     margin: 1%;
 }
-main > .topic > .topics-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-.topics-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-.sub-topics {
-    display: flex;
-    margin: .5% ;
-    
-}
-.sub-topics > .topic{
-    border: 2px solid orange;
-    display: flex;
-    flex-basis: 33%;
-    flex-direction: column;
-    margin: .5% .5%;
-}
 main>.topic>a.drop-topic {
     border: 2px solid black;
     display: inline-flex;
     text-decoration: none;
     width: 50%;
 }
-.sub-topics > .topic a.drop-topic {
+.topic > .topics-container > .topic{
+    border: 2px solid magenta;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+.topics-container > .project {
+    /* text-decoration: none; */
+    /* padding: 1%; */
+    /* color: black; */
+    /* flex-basis: 5%; */
+    /* border: 1px solid blue; */
+    /* height: fit-content;     */
+    /* font-size: 70%; */
+    /* flex: 1; */
+}
+.project img {
+    display: none;
+    max-height: 30px;
+    width: 100%;
+    height: 90%;
+}
+.sub-topics-container {
+    display: flex;
+    margin: .5%;
+    border: 2px solid orange;
+}
+
+.sub-topics-container > .project {
+    display: flex;
+    flex-basis: 27.5%;
+    flex-direction: column;
+    margin: .5% .5%;
+}
+.sub-topics-container > .topic a.drop-topic {
     display: inline-flex;
     text-decoration: none;
     width: 50%;
 }
-.topics-container > .project {
-    display: block;
-    text-decoration: none;
+.topics-container>.project {
+    /* text-decoration: none;
+    padding: 1%;
     color: black;
     flex-basis: 10%;
-    border: 1px solid black;
+    border: 1px solid blue;
+    display: block;
     height: fit-content;
-    padding: 1%;
-    max-height: 20vh;
-    font-size: 70%;
+    font-size: 70%; */
 }
-.project img {
-    width: 100%;
-    /* border: 2px solid black; */
-    height: 90%;
-    object-fit: cover;
-}
+
+
 .drop-topic:active,.drop-topic:focus,
 .project:active,.project:focus{
     box-shadow: 0 0 20px 2px orange;
 }
 .hide{
-    display: none
-    ;
+    display: none ;
 }
