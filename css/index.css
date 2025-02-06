@@ -21,7 +21,6 @@ main>.topic>a.drop-topic {
 }
 .topics-container  {
     width: 70%;
-    border: 2px dashed black;   
     display: flex;
     flex-wrap: wrap;
 }
