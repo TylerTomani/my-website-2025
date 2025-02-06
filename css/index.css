@@ -26,8 +26,9 @@ main > .topic > .topics-container {
     
 }
 .sub-topics > .topic{
+    border: 2px solid orange;
     display: flex;
-    flex-basis: 47%;
+    flex-basis: 33%;
     flex-direction: column;
     margin: .5% .5%;
 }
