@@ -19,7 +19,7 @@ nav.chatgpt-nav-icons {
     background-color: var(--draggable-bg);
 }
 #toggleSideBtn.active{
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 aside.draggable.active {
