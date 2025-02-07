@@ -6,8 +6,10 @@
 }
 .dropQuestion {
     text-decoration: none;
+    color: white;
     width: 80%;
     border: 1px solid black;
+    border: white 1px solid ;
     display: inline-block;
     padding: 1%;
     padding-left: 2%;
@@ -15,6 +17,10 @@
     margin-bottom: 1%;
 }
 .question-answer{
+    color: black;
+}
+.question-answer{
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;    
@@ -23,7 +29,11 @@
     'ui-sans-serif','-apple-system','system-ui','Segoe UI',
     'Helvetica','Arial','sans-serif';       
 }
+.question-txt > h5{
+    color: white;
+}
 .question-answer >.question-txt{
+    color: black;
     border-radius: 10px;
     margin-bottom: 1%;
     padding: 1%;   
