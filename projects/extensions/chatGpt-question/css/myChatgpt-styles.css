@@ -18,6 +18,10 @@ nav.chatgpt-nav-icons {
     width: 100%;
     background-color: var(--draggable-bg);
 }
+#toggleSideBtn.active{
+    position: absolute;
+    bottom: 0;
+}
 aside.draggable.active {
     /* position: absolute; */
     font-family: ui-sans-serif,
@@ -51,6 +55,8 @@ aside.draggable {
     transition: all 300ms;
     opacity: 1;
 }
+
+
 .draggable > * {
     transition: all 300ms;
     opacity: 0;
