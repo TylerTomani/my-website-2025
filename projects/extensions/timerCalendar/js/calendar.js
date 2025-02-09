@@ -45,9 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleMonthKeydown(e) {
         let letter = e.key.toLowerCase()
         const month = e.target;
+        let isMeta = e.metaKey
         const days = month.querySelector('.days');
-        if(letter == 'enter'){
+        if(letter == 'enter' && !isMeta){
             toggleDays(days);
+        } 
+        if(letter == 'enter' && isMeta){
+            if(days.classList.contains('hide')){
+                days.classList.remove('hide')
+                const dayEls = days.querySelectorAll('.day')
+                dayEls[0].focus()
+                console.log(dayEls[0])
+                
+            }
         }
     }
     function toggleDays(days){

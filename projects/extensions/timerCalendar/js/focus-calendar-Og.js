@@ -11,17 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
         } 
         monthMap[firstLetter].push({ element: month, index });
     });
-    document.addEventListener("keydown", (e) => {
-        const key = e.key.toLowerCase();
-        let letter = e.key.toLowerCase()
+    document.addEventListener("keydown", (event) => {
+        const key = event.key.toLowerCase();
+        let letter = event.key.toLowerCase()
         if(letter == 'h'){
             const homelink = document.querySelector('.homelink');
             homelink.focus()
+            
         }
         
-        const isShift = e.shiftKey;
+        const isShift = event.shiftKey;
         if (monthMap[key]) {
-            e.preventDefault();
+            event.preventDefault();
             cycleMonths(key, isShift);
         }
     });
