@@ -44,3 +44,11 @@ body {
     display: none;
 }
 
+
+.hoursDay{
+    padding: 15%;
+    /* border: 2px solid orange; */
+    order: -1;
+    flex-basis: 30%;
+
+}

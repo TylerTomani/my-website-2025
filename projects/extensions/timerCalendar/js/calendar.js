@@ -1,12 +1,10 @@
-
+// This calendar is off, We need the days to fall on the proper day of the week 
 document.addEventListener('DOMContentLoaded', () => {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const calendar = document.querySelector('.calendar');
-
-    // let currentMonthSelected = 'January'    
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let monthDivs = []
-    let daysShowing = false    
-    let currentMonth 
+    let daysShowing = false
+    let currentMonth
     months.forEach(month => {
         createMonths(month)
     });
@@ -50,19 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if(letter == 'enter' && !isMeta){
             toggleDays(days);
         } 
-        if(letter == 'enter' && isMeta){
-            if(days.classList.contains('hide')){
-                days.classList.remove('hide')
-                const dayEls = days.querySelectorAll('.day')
-                dayEls[0].focus()
-                console.log(dayEls[0])
-                
-            }
-        }
+        
     }
     function toggleDays(days){
-        
-        days.classList.toggle('hide');
+        if(days){
+            days.classList.toggle('hide');
+        }
     }
 });
  
