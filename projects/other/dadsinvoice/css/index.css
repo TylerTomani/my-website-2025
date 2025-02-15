@@ -1,14 +1,37 @@
-body > nav > ul{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body>header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+}
+#mainTargetDiv{
+    border: 1px solid black;
+    height: 85vh;
+}
+#mainTargetDiv.active, #mainTargetDiv:focus{
+    box-shadow: 0 0 3px 3px sandybrown;
+}
+nav.btm-nav > ul{
+    display: flex;
+    height: 10vh;
     list-style: none;
 }
-body > nav > ul li{
+body>nav.btm-nav>ul li {
     border: 1px solid black;
     border-bottom: none;
     flex-basis: 25%;
     font-size: 120%;
 }
-body > nav > ul li a{
+body>nav.btm-nav>ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
     text-decoration: none;
+}
+nav.btm-nav>ul li a.active, nav.btm-nav>ul li a:focus{
+    background-color: rgba(244, 165, 96, 0.74);
 }
