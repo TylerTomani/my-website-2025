@@ -16,6 +16,7 @@ as.forEach(el => {
         el.addEventListener('click', e => {
             e.preventDefault()
             fetchHtmlData(el.href)
+            console.log(e)
         })
     }
 })

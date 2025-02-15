@@ -61,10 +61,18 @@ export function letterFocusInvoice(){
     function cycleIitems(isShift){
          if(!isShift){
              console.log(iItem)
-             iItems[iItem].setAttribute('tabindex', 0)
+             if (iItem <=  iItems.length ){
+                 iItem++
+                } else {
+                    iItem = 1
+                    iItems[iItem].setAttribute('tabindex', 0)
+                    iItems[iItem].focus()
+                }
+                
+            }
+        if (iItems[iItem]){
+            iItems[iItem].setAttribute('tabindex', 0)
             iItems[iItem].focus()
-            iItem = (iItem + 1) % iItems.length 
-            
-         }
+        }
     }
 }
