@@ -1,4 +1,4 @@
-
+import { invoicePage } from "./letterfocus-index.js"
 export function letterFocusInvoice(){
     const homelink = document.querySelector('#homelink')
     const listPage = document.querySelector('#listPage')
@@ -7,6 +7,8 @@ export function letterFocusInvoice(){
     const toName = document.querySelector('#to_name')
     const invoiceNum = document.querySelector('#invoice_num > #number_label')
     const itemsContainer = document.querySelector('#items-container')
+    const invoiceNotes = document.querySelector('#invoice_notes')
+    const iItems = [invoiceNum, itemsContainer, invoiceNotes]
     const allEls = document.querySelectorAll('body *')
     const toNewCustomer = document.querySelector('#to_new_customer')
     const toAddress = document.querySelector(('#to_address'))
@@ -19,6 +21,7 @@ export function letterFocusInvoice(){
 
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
+        let isShift = e.shiftKey
         if (!textInputFocused) {
             if (letter == 'f') {
                 scrollTo(0, 0)
@@ -28,9 +31,7 @@ export function letterFocusInvoice(){
                 scrollTo(0, 0)
                 homelink.focus()
             }
-            if (letter == 'i') {
-                invoiceNum.focus()
-            }
+            
             if (letter == 'l') {
                 listPage.focus()
             }
@@ -42,8 +43,10 @@ export function letterFocusInvoice(){
                 scrollTo(0, 0)
                 toName.focus()
             }
+            if (letter == 'i') {
+                cycleIitems(isShift)
+            }
         }
-
     });
     [toName, toNewCustomer, toAddress].forEach(el => {
         el.addEventListener('focusin', e => {
@@ -54,5 +57,14 @@ export function letterFocusInvoice(){
 
         })
     })
+    let iItem = 0
+    function cycleIitems(isShift){
+         if(!isShift){
+             console.log(iItem)
+             iItems[iItem].setAttribute('tabindex', 0)
+            iItems[iItem].focus()
+            iItem = (iItem + 1) % iItems.length 
+            
+         }
+    }
 }
-// letterFocusInvoice()
