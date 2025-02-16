@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="to-from-container ">
-                <div tabindex="0" id="to">
+                <div  id="to">
                     <h3 >To</h3>
                     <!-- New Customer -->
                     <div class="invoiceForm_fromNameTD b2" id="to_nameTD" >
@@ -38,7 +38,7 @@
                             onblur="field_onblur(this,'');"
                              onchange="getCustomerAddress(this.value);"
                              > -->
-                        <select id="to_name" name="to_id" 
+                        <select tabindex="0" id="to_name" name="to_id" 
                              >
                             <option value="17455125">Brian Mintz</option>
                             <option value="27506549">Daniel &amp; Jeanne Pavlina</option>
@@ -117,7 +117,7 @@
                         <td   class="invoiceForm_fromNameTD" id="to_new_customerTD">
                             <!-- onblur="field_onblur(this,'Customer name');"  -->
                             <!-- onfocus="field_onfocus(this,'Customer name');" -->
-                            <input autofocus id="to_new_customer" autocomplete="nope"
+                            <input  id="to_new_customer" autocomplete="nope"
                                 type="text" name="to_new_customer" 
                                 value="Customer name">
                             </td>
@@ -135,7 +135,7 @@
                     </textarea>
 
                 </div>
-                <div tabindex="0" id="from">
+                <div  id="from">
                     <h3>From</h3>
                     <!-- onfocus="field_onfocus(this,'Your name');"
                     onblur="field_onblur(this,'Your name');"  -->
@@ -159,10 +159,7 @@ Mike Tomani 585-203-6767</textarea>
                 <!-- Invoice # -->
                 <div id="invoice_num">
                     <!-- Invoice # -->
-                    <div tabindex="0" id="number_label"
-                        >
-                        Invoice #
-                    </div>
+                    <div  id="number_label">Invoice #</div>
                     <!-- # -->
                     <div class="invoiceForm_fromNameTD" id="invoice_numberTD" style="position:relative">
                         <input id="invoice_number" type="text"
@@ -187,13 +184,13 @@ Mike Tomani 585-203-6767</textarea>
                         Invoice Date
                     </div>
                     <!-- Date -->
-                    <div class="invoiceForm_fromNameTD" id="invoice_dateTD">
+                    <div  class="invoiceForm_fromNameTD" id="invoice_dateTD">
                         <!-- onfocus="field_onfocus(this,'');" 
                         onblur="field_onblur(this,'');"
                         onchange="dueAfterInvoice()"  -->
-                        <input id="invoice_date"
+                        <input tabindex="0" id="invoice_date"
                             type="text"
-                            name="invoice_date" value="10/30/2024" class="hasDatepicker">
+                             name="invoice_date" value="10/30/2024" class="hasDatepicker">
                     </div>
                 </div>
                 <!-- Due Date -->
