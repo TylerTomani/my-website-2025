@@ -11,8 +11,7 @@ body{
 body>header {
     display: flex;
     justify-content: space-around;
-    height: 5vh;
-    
+    height: 5vh;    
 }
 main {
     display: flex;
@@ -20,17 +19,19 @@ main {
 }
 #mainTargetDiv{
     border: 1px solid black;
+    height: 85vh;
 }
 #mainTargetDiv.active, #mainTargetDiv:focus{
     box-shadow: 0 0 3px 3px sandybrown;
 }
 nav.btm-nav {
-    /* height: 15vh; */
+    height: 5vh;
 }
 nav.btm-nav > ul{
     display: flex;
     list-style: none;
     border: 1px solid black;
+    height: 100%;
 }
 main>nav.btm-nav>ul li {
     border-bottom: none;
