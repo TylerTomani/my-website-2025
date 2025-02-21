@@ -1,0 +1,71 @@
+<div class="topic-questions">
+    <h4>Css</h4>
+    <p class="r">
+        ** Put catagory drop downs here or in side bar, try both
+    </p>
+    <div class="questions-container">
+        <div class="question-container">
+            <a tabindex="0" href="#" class="dropQuestion">Css Selectors(<span class="r">This is the subcatgory, try in side bar
+                see what's better
+            </span> )
+                <br>(pull error)
+            </a>
+            <!-- Below in the the articles are the same format is chatgpt -->
+             <!-- I'm keeping the html the same but adding the classes:
+               questions-answer, question-txt, answer-txt-->
+            <!-- Push and Pull Error -->
+            <div class="answer question-answer">
+                <article class="text-token-text-primary question-txt">
+                    <h5 class="sr-only">Question: Atom Error when pulling</h5>
+                    <div class="text-base">
+                        <div class="whitespace-pre-wrap">
+                            <pre tabindex="0" class="copy-code">    
+You said:
+is there a way to target .step in css from .step-float in the following html using css 
+
+ class="step">
+        &lt;div tabindex="0" class="step-txt step-float">
+    &lt;/div>
+    &lt;/div>
+                            </pre>
+                        </div>
+                    </div>
+                </article>
+                <article class="text-token-text-primary answer-txt">
+                    <h6 class="sr-only">ChatGPT said:</h6>
+                    <div class="text-base">
+                        <div class="markdown prose">
+                            <p>
+                                No, you cannot directly target .step from .step-float using only CSS because CSS selectors work in a parent-to-child
+                                direction, not the other way around (child-to-parent).
+                                
+                                However, if you control the HTML structure, you can use the :has() pseudo-class (which is supported in modern browsers)
+                                to achieve this:
+                            </p>
+                            
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
+.step:has(.step-float) {
+    /* Your styles for .step */
+}</pre>
+                            </div>
+                            <p>
+                                This will apply styles to .step only if it contains an element with the .step-float class.
+                                
+                                If <code>:has()</code> is not an option due to browser support, you'd need JavaScript to achieve this. Let me know if you need a JS
+                                solution! 🚀
+                            </p>
+                  
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            
+
+        </div>
+        
+        
+    
+    </div>
+</div>
