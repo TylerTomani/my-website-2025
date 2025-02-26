@@ -14,13 +14,11 @@ export function DropTopics(){
             e.preventDefault()
             toggleTopicQuestions(e)
         })
-        el.addEventListener('keydown', e => {
-            let letter = e.key.toLowerCase()
-            if(letter == 'enter'){
-                // toggleTopicQuestions(e)
-            }
+        // el.addEventListener('keydown', e => {
+        //     let letter = e.key.toLowerCase()
             
-        })
+            
+        // })
     })
 }
 
@@ -28,7 +26,6 @@ function toggleTopicQuestions(e){
     const topic = getTopic(e.target.parentElement)
     const questionsContainer = topic.querySelector('.questions-container')
     questionsContainer.classList.toggle('hide') 
-    console.log(questionsContainer)
 }
 function getTopic(parent){
     if(parent.classList.contains('topic')){
