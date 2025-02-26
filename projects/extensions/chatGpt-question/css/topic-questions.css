@@ -1,10 +1,11 @@
 .copy-code {
     white-space: normal;
 }
-.topic-questions {
+.topics-questions {
     margin: 0 1.5%;
 }
-.dropQuestion {
+/* .dropQuestion */
+.drop-topic {
     text-decoration: none;
     color: white;
     width: 80%;
