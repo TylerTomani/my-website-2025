@@ -9,7 +9,7 @@ export function handleQuestions(){
             el.classList.add('hide')
         })  
     }
-    hideQuestionAnswers()
+    // hideQuestionAnswers()
     function hideAnswers() {
         answersTxt.forEach((el => {
             el.classList.add('hide')

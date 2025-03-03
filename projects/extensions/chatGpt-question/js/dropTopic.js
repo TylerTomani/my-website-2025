@@ -11,14 +11,16 @@ export function DropTopics(){
     })
     dropTopics.forEach(el => {
         el.addEventListener('click', e => {
-            e.preventDefault()
+            // e.preventDefault()
             toggleTopicQuestions(e)
         })
-        // el.addEventListener('keydown', e => {
-        //     let letter = e.key.toLowerCase()
-            
-            
-        // })
+        el.addEventListener('keydown', e => {
+            let letter = e.key.toLowerCase()
+            if(letter == 'enter'){                
+                e.preventDefault()
+                toggleTopicQuestions(e)
+            }
+        })
     })
 }
 
@@ -26,6 +28,10 @@ function toggleTopicQuestions(e){
     const topic = getTopic(e.target.parentElement)
     const questionsContainer = topic.querySelector('.questions-container')
     questionsContainer.classList.toggle('hide') 
+    // const questionAnswers = topic.querySelectorAll('.question-answer')
+    //  questionAnswers.forEach(el => {
+        // el.classList.toggle('hide')
+    //  })
 }
 function getTopic(parent){
     if(parent.classList.contains('topic')){
