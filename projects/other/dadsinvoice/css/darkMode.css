@@ -8,7 +8,15 @@
     color: var(--font-primary)
 }
 
-.darkMode h3,.darkMode #due_date_label{
+.darkMode h3,.darkMode #due_date_label,
+.darkMode #subtotal_label, .darkMode td{
+    color: var(--font-primary) !important;
+
+}
+.darkMode #balance_due_label {
+    color: black !important;
+}
+.darkMode #subtotal_label, .darkMode td{
     color: var(--font-primary) !important;
 
 }
