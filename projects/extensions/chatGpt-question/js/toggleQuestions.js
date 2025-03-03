@@ -4,12 +4,18 @@ export function handleQuestions(){
     const questionAnswers = document.querySelectorAll('.question-answer')
     const answersTxt = document.querySelectorAll('.answer-txt')
     
+    function hideQuestionAnswers() {
+        questionAnswers.forEach(el => {
+            el.classList.add('hide')
+        })  
+    }
+    hideQuestionAnswers()
     function hideAnswers() {
         answersTxt.forEach((el => {
             el.classList.add('hide')
         }))
     }
-    // hideAnswers()
+    hideAnswers()
 
     dropQuestions.forEach(el => {
         el.addEventListener('keydown', e => {
