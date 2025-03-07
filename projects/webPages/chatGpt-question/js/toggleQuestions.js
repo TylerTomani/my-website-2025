@@ -3,7 +3,6 @@ export function handleQuestions(){
     const dropQuestions = document.querySelectorAll('.dropQuestion')
     const questionAnswers = document.querySelectorAll('.question-answer')
     const answersTxt = document.querySelectorAll('.answer-txt')
-    
     function hideQuestionAnswers() {
         questionAnswers.forEach(el => {
             el.classList.add('hide')
@@ -16,35 +15,38 @@ export function handleQuestions(){
         }))
     }
     hideAnswers()
-
+    
     dropQuestions.forEach(el => {
+        el.addEventListener('click', e => {
+            console.log(e.target)
+            e.preventDefault()
+            toggleAnswer(e)
+        })
         el.addEventListener('keydown', e => {
-            toggleQuestion(e)
+            let letter = e.key.toLowerCase()
+            if (letter == 'enter') {
 
+                toggleAnswer(e)
+            }
         })
     })
-
-    
-   dropQuestions.forEach(el => {
-        el.addEventListener('click', e => {
-            e.preventDefault()
-            toggleQuestion(e)
-        })
-   })
-    function toggleQuestion(e) {
+    function toggleAnswer(e) {
         // e.preventDefault()
-        const parent = getQuestionContainerr(e.target.parentElement)
+        const parent = getQuestionAnswerContainer(e.target.parentElement)
+        const answerTxt = parent.querySelector('.answer-txt')
+        answerTxt.classList.toggle('hide')
         // console.log(parent)
 
     }
+    
 }
-function getQuestionContainerr(parent){
-    if(parent.classList.contains('question-container')){
+function getQuestionAnswerContainer(parent){
+    if(parent.classList.contains('question-answer')){
         return parent
     } else if (parent.parentElement){
-        return getQuestionContainerr(parent.parentElement)
+        return getQuestionAnswerContainer(parent.parentElement)
     } else {
         return null
     }
 }
-// handleQuestions()
+handleQuestions()

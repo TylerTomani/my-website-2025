@@ -3,7 +3,7 @@ const questionAnswers = document.querySelectorAll('.questions-answer')
 
 function hideQuestion(){
     questionAnswers.forEach((el => {
-        el.classList.add('hide')
+        // el.classList.add('hide')
     }))
 }
 hideQuestion()
