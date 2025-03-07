@@ -54,8 +54,11 @@ function hideAllTopicsContainers(){
 }
 
 function hideAllSUBTopicsContainers() {
+    
     subTopicContainer.forEach(el => {
-        el.classList.add('hide')
+        if (!el.classList.contains('show')) {
+            el.classList.add('hide')
+        }
     })
 }
 function getTopic(parent){

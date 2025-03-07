@@ -56,13 +56,16 @@ main > .topic{
 }
 
 .sub-topic-container > .project{
-    font-size: 101%;
     text-decoration: none;
     display: flex;
     flex-basis: 15%;
     flex-direction: column;
-    margin: 1.5% .5%;
+    margin: 2.5% 1.5%;
     margin-left: 2.5%;
+    background-color: lightgrey;
+    border: 1px solid black;
+    font-size: 95%;
+    color: black;
 }
 
 
