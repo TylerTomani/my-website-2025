@@ -1,4 +1,5 @@
 const dropTopics = document.querySelectorAll('.drop-topic')
+const dropSubTopics = document.querySelectorAll('.drop-sub-topic')
 const topicsContainers = document.querySelectorAll('.topics-container')
 const subTopicsContainers = document.querySelectorAll('.sub-topics-container')
 hideAllTopicsContainers()
@@ -6,6 +7,12 @@ dropTopics.forEach(el => {
     el.addEventListener('click', e =>{
         e.preventDefault()
         toggleTopic(e)
+    })
+})
+dropSubTopics.forEach(el => {
+    el.addEventListener('click', e =>{
+        e.preventDefault()
+        toggleSubTopic(e)
     })
 })
 function toggleTopic(e){
@@ -16,6 +23,14 @@ function toggleTopic(e){
     if(topicsContainer){topicsContainer.classList.toggle('hide')}
     const subTopicContainers = topic.querySelector('.sub-topics-container')
     if(subTopicContainers){subTopicContainers.classList.toggle('hide')}
+}
+function toggleSubTopic(e){
+    // hideAllTopicsContainers()
+    hideAllSUBTopicsContainers()
+    const subTopic = getSubTopic(e.target.parentElement)
+    const subTopicsContainer = subTopic.querySelector('.sub-topic-container')
+    if(subTopicsContainer){subTopicsContainer.classList.toggle('hide')}
+    
 }
 function hideAllTopicsContainers(){
     dropTopics.forEach(el => {
@@ -55,6 +70,15 @@ function getTopic(parent){
         return parent
     } else if (parent.parentElement){
         return getTopic(parent.parentElement)
+    } else {
+        return null
+    }
+}
+function getSubTopic(parent){
+    if(parent.classList.contains('sub-topic')){
+        return parent
+    } else if (parent.parentElement){
+        return getSubTopic(parent.parentElement)
     } else {
         return null
     }

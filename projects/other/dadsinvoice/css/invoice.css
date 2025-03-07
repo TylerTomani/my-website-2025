@@ -13,11 +13,7 @@
 select {
     border: 1px solid black;
 }
-select:active,
-select:focus {
-    border: 10px solid red;
-    box-shadow: 2px 4px 1px 5px blue;
-}
+
 #invoice_heading {
     text-align: right;
     position: relative;
@@ -91,26 +87,19 @@ font-family: verdana;
 #invoice_num_container {
     display: flex;
 }
-
 #to_nameTD>select {
-
 }
-
 #invoice_num_container {
 }
 #invoice_num,
 #invoice_date,
 #invoice_due_date {
-
 }
-
 #number_label,
 #date_label,
 #invoice_due_date {
 }
-
 .invoiceForm_fromNameTD {
 }
-
 .invoiceForm_fromNameTD input {
 }

@@ -14,15 +14,7 @@ export function letterFocusInvoice(){
     const textAreaInputs = document.querySelectorAll('textarea')
     
         
-    addEventListener('keydown', e => {
-        let isShift = e.shiftKey
-        if (!textInputFocused){
-            cycleInvoiceElements(e)
-        }
-        if (isShift) {
-            cycleInvoiceElements(e)
-        }
-    });
+    
     function field_onfocus(element, placeholderText) {
         if (element.value.trim() === '') {
             element.value = placeholderText;
@@ -51,6 +43,23 @@ export function letterFocusInvoice(){
         el.addEventListener('focusout', e => {
             textInputFocused = false
         })
+        
+    });
+    addEventListener('keydown', e => {
+        let isShift = e.shiftKey
+        let letter = e.key.toLowerCase()
+        if (!textInputFocused) {
+            cycleInvoiceElements(e)
+        }
+        if (isShift) {
+            cycleInvoiceElements(e)
+        }
+        // Just for now
+        if(letter == 'i'){
+            const dataTableItem = document.querySelector('#itemSelect0')
+            dataTableItem.focus()
+            
+        }
         
     });
 }
