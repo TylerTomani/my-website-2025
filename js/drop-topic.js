@@ -1,8 +1,8 @@
 const dropTopics = document.querySelectorAll('.drop-topic')
 const dropSubTopics = document.querySelectorAll('.drop-sub-topic')
 const topicsContainers = document.querySelectorAll('.topics-container')
-const subTopicsContainers = document.querySelectorAll('.sub-topics-container')
-hideAllTopicsContainers()
+const subTopicContainer = document.querySelectorAll('.sub-topic-container')
+
 dropTopics.forEach(el => {
     el.addEventListener('click', e =>{
         e.preventDefault()
@@ -15,9 +15,8 @@ dropSubTopics.forEach(el => {
         toggleSubTopic(e)
     })
 })
+hideAllSUBTopicsContainers()
 function toggleTopic(e){
-    // hideAllTopicsContainers()
-    hideAllSUBTopicsContainers()
     const topic = getTopic(e.target.parentElement)
     const topicsContainer = topic.querySelector('.topics-container')
     if(topicsContainer){topicsContainer.classList.toggle('hide')}
@@ -25,11 +24,12 @@ function toggleTopic(e){
     if(subTopicContainers){subTopicContainers.classList.toggle('hide')}
 }
 function toggleSubTopic(e){
-    // hideAllTopicsContainers()
-    hideAllSUBTopicsContainers()
     const subTopic = getSubTopic(e.target.parentElement)
     const subTopicsContainer = subTopic.querySelector('.sub-topic-container')
-    if(subTopicsContainer){subTopicsContainer.classList.toggle('hide')}
+    console.log(subTopicContainer)
+    if(subTopicsContainer){
+        subTopicsContainer.classList.toggle('hide')
+    }
     
 }
 function hideAllTopicsContainers(){
@@ -54,14 +54,7 @@ function hideAllTopicsContainers(){
 }
 
 function hideAllSUBTopicsContainers() {
-    subTopicsContainers.forEach(el => {
-        const projects = el.querySelectorAll('.project')
-        projects.forEach(project => {
-            if(project.classList.contains('show')){
-                project.classList.remove(('show'))
-                console.log(project)
-            }
-        })
+    subTopicContainer.forEach(el => {
         el.classList.add('hide')
     })
 }
