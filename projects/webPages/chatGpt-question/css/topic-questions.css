@@ -1,5 +1,5 @@
 .copy-code {
-    white-space: normal;
+    
 }
 .topics-questions {
     margin: 0 1.5%;
@@ -50,7 +50,9 @@
     font-size: 95%;
     width: 100%;
 }
+
 .question-txt >.text-base>.whitespace-pre-wrap> .copy-code {
+    white-space: normal;
     width: 100%;
     padding: 1% 2%;
     /* text-wrap: wrap; */

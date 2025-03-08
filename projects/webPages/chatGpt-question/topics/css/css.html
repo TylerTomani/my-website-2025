@@ -1,71 +1,112 @@
-<div class="topic-questions">
-    <h4>Css</h4>
-    <p class="r">
-        ** Put catagory drop downs here or in side bar, try both
-    </p>
-    <div class="questions-container">
-        <div class="question-container">
-            <a tabindex="0" href="#" class="dropQuestion">Css Selectors(<span class="r">This is the subcatgory, try in side bar
-                see what's better
-            </span> )
-                <br>(pull error)
-            </a>
-            <!-- Below in the the articles are the same format is chatgpt -->
-             <!-- I'm keeping the html the same but adding the classes:
-               questions-answer, question-txt, answer-txt-->
-            <!-- Push and Pull Error -->
-            <div class="answer question-answer">
-                <article class="text-token-text-primary question-txt">
-                    <h5 class="sr-only">Question: Atom Error when pulling</h5>
-                    <div class="text-base">
-                        <div class="whitespace-pre-wrap">
-                            <pre tabindex="0" class="copy-code">    
-You said:
-is there a way to target .step in css from .step-float in the following html using css 
-
- class="step">
-        &lt;div tabindex="0" class="step-txt step-float">
-    &lt;/div>
-    &lt;/div>
-                            </pre>
-                        </div>
-                    </div>
-                </article>
-                <article class="text-token-text-primary answer-txt">
-                    <h6 class="sr-only">ChatGPT said:</h6>
-                    <div class="text-base">
-                        <div class="markdown prose">
-                            <p>
-                                No, you cannot directly target .step from .step-float using only CSS because CSS selectors work in a parent-to-child
-                                direction, not the other way around (child-to-parent).
-                                
-                                However, if you control the HTML structure, you can use the :has() pseudo-class (which is supported in modern browsers)
-                                to achieve this:
-                            </p>
-                            
-                            <div class="code-container">
-                                <pre tabindex="0" class="copy-code">
-.step:has(.step-float) {
-    /* Your styles for .step */
-}</pre>
+<h4>CSS</h4>
+<div class="topics-questions">
+    <!-- Installing Git for Visual Studio code (pull error) -->   
+    <div class="topic">
+        <a tabindex="0" href="#" class="drop-topic">Ensure Elements Maximum Height of Window
+        </a>
+        <div class="questions-container">
+            <div class="question-container">
+                <!-- Below in the the articles are the same format is chatgpt -->
+                <!-- I'm keeping the html the same but adding the classes:
+                       questions-answer, question-txt, answer-txt-->
+                <!-- Push and Pull Error -->
+                <div class="answer question-answer">
+                    <article class="text-token-text-primary question-txt">
+                        <h5 class="sr-only">Event Listener Duplication Debug</h5>
+                        <div class="text-base">
+                            <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
+                                             it to a pre so i can copy it  -->
+                            <div class="whitespace-pre-wrap">
+                                <pre tabindex="0" class="copy-code dropQuestion">
+how do i ensure element is full height of window when scrolling down</pre>
                             </div>
-                            <p>
-                                This will apply styles to .step only if it contains an element with the .step-float class.
-                                
-                                If <code>:has()</code> is not an option due to browser support, you'd need JavaScript to achieve this. Let me know if you need a JS
-                                solution! 🚀
-                            </p>
-                  
                         </div>
-                    </div>
-                </article>
-            </div>
-            
-            
+                    </article>
+                    <article class="text-token-text-primary answer-txt">
+                        <h6 class="sr-only">Chat Gpt Said: </h6>
+                        <div class="text-base">
+                            <!-- .markdown .prose is 5th inner child of the 2nd child element 
+                                                            '.group/conversation-turn' of .text-base   -->
+                            <div class="markdown prose">
+                                <h3>1. Pure CSS Approach (Best for Static Layouts)</h3>
+                                <p>
+                                    If you just need the element to always be the full height of the viewport:
+                                </p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+.full-height {
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Scrollable if content overflows */
+}
+</pre>
+                                </div>
+                                <p>If the element is inside a <span class="mdtxt"><strong>parent</strong></span> container, you may need:</p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-        </div>
-        
-        
+.container {
+    <span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
+    display: flex; /* Optional: for centering content */
+    align-items: center;
+    justify-content: center;
+}
+
+                                    </pre>
+                                </div>
+                                <h3>2. JavaScript Approach (Handles Dynamic Changes)</h3>
+                                <p>
+                                    If the element’s height needs to dynamically adjust when the window resizes:
+                                </p>
+                                
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+function setFullHeight() {
+    const element = document.querySelector('.full-height');
+    if (element) {
+        element.style.height = `${window.innerHeight}px`;
+    }
+}
+
+// Run on load and resize
+window.addEventListener('load', setFullHeight);
+window.addEventListener('resize', setFullHeight);
+
+                                    </pre>
+                                </div>
     
+                                <p>
+                                    <strong>Alternative Fix:</strong> Using a Single Event Listener
+                                    Instead of attaching an event listener to each .copy-code element, delegate it to the
+                                    document:
+                                </p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+                                        document.addEventListener('keydown', e => {
+                                        let letter = e.key.toLowerCase()
+                                        if (letter == 'enter') {
+                                        if (e.target.classList.contains('copy-code')) {
+                                        e.preventDefault()
+                                        toggleImgVid(e)
+                                        return // Prevent further execution
+                                        }
+                                        toggleImgVid(e)
+                                        addTabIndexes(e)
+                                        }
+                                        })</pre>
+                                </div>
+                                <p>
+                                    This avoids multiple event listeners and prevents duplicate execution.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- ------------------------------------------------------- -->
+            </div>
+        </div>
     </div>
 </div>

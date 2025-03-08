@@ -207,56 +207,88 @@ stepTxtsFocus()</pre>
                                                         '.group/conversation-turn' of .text-base   -->
                             <div class="markdown prose">
                                 <p>
-                                    You can capture the error message from a script that fails to execute by using try...catch. However, syntax errors like
-                                    const messedUpVariable = 1 akj will cause a parsing error and prevent the script from running at all. To catch such
-                                    errors dynamically, you need to wrap the evaluation in a try...catch block or use window.onerror.
+                                    The reason why the code at line 47 (i.e., toggleImgVid(e)) is executing twice could be due to multiple event listeners
+                                    triggering it. Here are possible reasons:
                                 </p>
-                                <h3>Solution 1: Using try...catch (For Runtime Errors)</h3>
-                                <p>If the error happens at runtime (e.g., calling an undefined function), you can capture it with try...catch:</p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-let consoleLogMessage = "";
-
-try {
-    // This will cause a runtime error
-    someUndefinedFunction();
-} catch (error) {
-    consoleLogMessage = error.message;
-    console.log("Stored Error:", consoleLogMessage);
-}</pre>
-                                </div>
-                                <h3>Solution 2: Using window.onerror (For Syntax & Other Errors)</h3>
+                                <h3>1. Multiple Event Listeners Firing</h3>
                                 <p>
-                                    If you want to catch all errors, including syntax errors, globally in a browser environment, use window.onerror:
+                                    There are two separate places where toggleImgVid(e) is being called:
+                                    Inside the keydown event listener for .copy-code elements:
+                                    js
                                 </p>
                                 <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-let consoleLogMessage = "";
-
-window.onerror = function(message, source, lineno, colno, error) {
-    consoleLogMessage = message;
-    console.log("Captured error:", consoleLogMessage);
-};
-
-// Intentionally causing a syntax error (in an `eval` block to avoid stopping script execution)
-try {
-    eval("const brokenVar = 1 akj"); // Syntax error
-} catch (error) {
-    consoleLogMessage = error.message;
-    console.log("Caught Syntax Error:", consoleLogMessage);
-}</pre>
+                                    <pre tabindex="0" class="">
+tabIndexElements.forEach(el => {
+    el.addEventListener('keydown', e => {
+        let letter = e.key.toLowerCase()
+        if (letter == 'enter') {
+            <span class="r">toggleImgVid(e) // Call 1</span>
+        }
+    })
+})</pre>
                                 </div>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="">
+addEventListener('keydown', e => {
+    let letter = e.key.toLowerCase()
+    if (letter == 'enter') {
+        <span class="r">toggleImgVid(e) // Call 2</span>
+        addTabIndexes(e)
+    }
+})</pre>
+                                </div>
+                                <h3>2. Event Bubbling</h3>
                                 <p>
-                                    How It Works:
-                                    window.onerror captures errors that occur anywhere in the script.
-                                    eval() allows intentional execution of invalid code without breaking the entire script.
-                                    try...catch is useful for runtime errors, but it cannot catch syntax errors outside an eval() call.
-                                    This approach stores error messages in consoleLogMessage, making them accessible for further handling. 🚀                                
-                                </p>                
+                                    If the keydown event is triggered inside a .copy-code element, it will first fire in the individual element's event
+                                    listener (inside the tabIndexElements.forEach(...) loop).
+                                    Then, because keydown events bubble up, it also triggers the global keydown event listener.
+                                    This results in toggleImgVid(e) executing twice—once from the .copy-code element listener and once from the global
+                                    listener.
+                                </p>
+                                <h3>Solution</h3>
+                                <p>
+                                    To prevent duplicate execution, you can stop event propagation inside the .copy-code event listener:
+                                </p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+tabIndexElements.forEach(el => {
+    el.addEventListener('keydown', e => {
+        let letter = e.key.toLowerCase()
+        if (letter == 'enter') {
+            <span class="m">e.stopPropagation() // Prevent event from reaching the global listener</span>
+            toggleImgVid(e)
+        }
+    })
+})</pre>
+                                </div>
+                                
+                                <p>
+                                    <strong>Alternative Fix:</strong> Using a Single Event Listener
+                                    Instead of attaching an event listener to each .copy-code element, delegate it to the document:
+                                </p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+document.addEventListener('keydown', e => {
+    let letter = e.key.toLowerCase()
+    if (letter == 'enter') {
+        if (e.target.classList.contains('copy-code')) {
+            e.preventDefault()
+            toggleImgVid(e)
+            return // Prevent further execution
+        }
+        toggleImgVid(e)
+        addTabIndexes(e)
+    }
+})</pre>
+                                </div>                          
+                                <p>
+                                    This avoids multiple event listeners and prevents duplicate execution.
+                                </p>
                             </div>
                         </div>
                     </article>
                 </div>
+                <!-- Event Listener Duplcation Debug -->
                 <div class="answer question-answer">
                     <article class="text-token-text-primary question-txt">
                         <h5 class="sr-only">Question: Atom Error when pulling</h5>
@@ -280,70 +312,7 @@ try {
                             </div>
                         </div>
                     </article>
-                    <article class="text-token-text-primary answer-txt">
-                        <h6 class="sr-only">Chat Gpt Said: Atom Error when pulling</h6>
-                        <div class="text-base">
-                            <!-- .markdown .prose is 5th inner child of the 2nd child element 
-                                            '.group/conversation-turn' of .text-base   -->
-                            <div class="markdown prose">
-                                <p>
-                                    It looks like Git is trying to use the atom editor to open a merge message, but it can't find
-                                    the atom command on your
-                                    system. You can resolve this by changing the default editor for Git or bypassing the editor
-                                    prompt.
-                                </p>
-                                <h3>1. Set a Different Default Editor (e.g., VS Code)</h3>
-                                <p>You can set VS Code as your default editor for Git:</p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-                                        git config --global core.editor "code --wait"</pre>
-                                </div>
-                                <p>
-                                    This will configure VS Code to be used as the editor when Git requires it. After running this,
-                                    you can retry the git
-                                    pull:
-                                </p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-                                        git pull origin main</pre>
-                                </div>
-                                <h3>2. Complete the Merge Without Opening an Editor</h3>
-                                <p>Since you don’t want to keep local changes, you can skip the commit message prompt and force the
-                                    merge with --no-edit:</p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-                                        git merge --no-edit</pre>
-                                </div>
-                                <p>Or if the merge is already in progress, you can complete it directly:</p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-                                        git commit --no-edit</pre>
-                                </div>
-                                <p>After that, run:</p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-                                        git pull origin main</pre>
-                                </div>
-                                <p class="r">
-                                    The above worked 🫡
-                                </p>
-                                <hr>
-                                <p>
-                                    If the merge is still causing issues, you can abort it and retry with the discard option:
-                                </p>
-                                <div class="code-container">
-                                    <pre tabindex="0" class="copy-code">
-                                        git merge --abort
-                                        git reset --hard HEAD
-                                        git pull origin main</pre>
-                                </div>
-                                <p>
-                                    This will abort the current merge attempt, reset your local changes, and pull the latest changes
-                                    from the main branch.</p>
-        
-                            </div>
-                        </div>
-                    </article>
+                    
                 </div>
                 <!-- ------------------------------------------------------- -->
             </div>
