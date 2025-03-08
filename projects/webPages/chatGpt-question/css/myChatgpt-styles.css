@@ -24,19 +24,11 @@ nav.chatgpt-nav-icons {
 }
 aside.draggable.active {
     /* position: absolute; */
-    font-family: ui-sans-serif,
-        /* -apple-system, */
-        system-ui,
-        "Segoe UI",
-        Helvetica,
-        "Apple Color Emoji",
-        Arial,
-        sans-serif,
-        "Segoe UI Emoji",
-        "Segoe UI Symbol";
+    font-family: ui-sans-serif,/* -apple-system, */system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
     font-style:normal;
     color: var(--text-prime-color);
     width: 20%;
+    height: 100vmax;
     border-right: 2px solid black;
     background-color: var(--draggable-bg);
     transition: all 300ms;
