@@ -28,10 +28,6 @@ function toggleTopicQuestions(e){
     const topic = getTopic(e.target.parentElement)
     const questionsContainer = topic.querySelector('.questions-container')
     questionsContainer.classList.toggle('hide') 
-    // const questionAnswers = topic.querySelectorAll('.question-answer')
-    //  questionAnswers.forEach(el => {
-        // el.classList.toggle('hide')
-    //  })
 }
 function getTopic(parent){
     if(parent.classList.contains('topic')){

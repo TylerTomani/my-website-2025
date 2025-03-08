@@ -90,6 +90,174 @@ try {
                         </div>
                     </article>
                 </div>
+                <!-- ------------------------------------------------------- -->
+            </div>
+        </div>
+
+    </div>
+    <!-- Event Listener Duplication Debug -->
+    <div class="topic">
+        <a tabindex="0" href="#" class="drop-topic">Event Listener Duplication Debug
+        </a>
+        <div class="questions-container">
+            <div class="question-container">
+                <!-- Below in the the articles are the same format is chatgpt -->
+                 <!-- I'm keeping the html the same but adding the classes:
+                   questions-answer, question-txt, answer-txt-->
+                <!-- Push and Pull Error -->
+                <div class="answer question-answer">
+                    <article class="text-token-text-primary question-txt">
+                        <h5 class="sr-only">Event Listener Duplication Debug</h5>
+                        <div class="text-base">
+                            <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
+                                         it to a pre so i can copy it  -->
+                            <div class="whitespace-pre-wrap">
+                                <pre tabindex="0" class="copy-code dropQuestion">
+                                    why is the following code at line 47 executing twice 
+export let lastStep = null
+export function stepTxtsFocus() {
+const steps = document.querySelectorAll('.step , .step-float')
+// const tabIndexElements = document.querySelectorAll('.copy-code, textarea')
+// Maybe just keep text area with focus
+const tabIndexElements = document.querySelectorAll('.copy-code')
+const  imgVids = document.querySelectorAll('.step-img > img, .step-vid, video')
+let stepFocused
+    tabIndexElements.forEach(el => {
+        el.addEventListener('keydown', e => {
+            let letter = e.key.toLowerCase()
+            if (letter == 'enter') {
+                toggleImgVid(e)
+            }
+        })
+    })
+    steps.forEach(el => {
+        el.addEventListener('focus', e => {
+            removeAllTabIndexes()
+            deEnlargeAllImgVid()
+    
+        })
+    })
+    addEventListener('keydown', e => {
+        let letter = e.key.toLowerCase()
+        if (letter == 'enter') {
+            toggleImgVid(e)
+            addTabIndexes(e)
+        }
+        if(letter == 'm'){
+            const targetDiv = document.querySelector('#targetDiv')
+            targetDiv.focus()
+            
+        }
+        if(!isNaN(letter)){
+            let intLet = parseInt(letter)
+            if(intLet <= steps.length){
+                steps[intLet - 1].focus()
+            } else {
+                const endNxtLesson = document.querySelector('#endNxtLesson')
+                endNxtLesson.focus()
+            }
+        }
+    })
+    function toggleImgVid(e){
+        e.preventDefault()
+        console.log(e.target)    
+        if(e.target.classList.contains('copy-code')){
+            e.preventDefault()
+        }
+        
+
+    }
+    function addTabIndexes(e){
+        const tabEls = e.target.querySelectorAll('.copy-code, textarea')
+        tabEls.forEach(el => {
+            el.setAttribute('tabindex', '0')
+        })
+    }
+    function removeAllTabIndexes(){
+        tabIndexElements.forEach(el => {
+            el.setAttribute('tabindex', '-1')
+        })
+    }
+    function deEnlargeAllImgVid(){
+        imgVids.forEach(el => {
+            if(el.classList.contains('enlarge')){
+                el.classList.remove('enlarge')
+            }
+        })
+    }
+}
+function getStep(parent){
+    // if(parent.classList.contains('step')){
+    if(parent.classList.contains('step')){
+        return parent
+    } else if (parent.parentElement){
+        return getStep(parent.parentElement)
+    } else {
+        return null
+    }
+}
+stepTxtsFocus()
+                                </pre>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="text-token-text-primary answer-txt">
+                        <h6 class="sr-only">Chat Gpt Said: </h6>
+                        <div class="text-base">
+                            <!-- .markdown .prose is 5th inner child of the 2nd child element 
+                                                        '.group/conversation-turn' of .text-base   -->
+                            <div class="markdown prose">
+                                <p>
+                                    You can capture the error message from a script that fails to execute by using try...catch. However, syntax errors like
+                                    const messedUpVariable = 1 akj will cause a parsing error and prevent the script from running at all. To catch such
+                                    errors dynamically, you need to wrap the evaluation in a try...catch block or use window.onerror.
+                                </p>
+                                <h3>Solution 1: Using try...catch (For Runtime Errors)</h3>
+                                <p>If the error happens at runtime (e.g., calling an undefined function), you can capture it with try...catch:</p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+let consoleLogMessage = "";
+
+try {
+    // This will cause a runtime error
+    someUndefinedFunction();
+} catch (error) {
+    consoleLogMessage = error.message;
+    console.log("Stored Error:", consoleLogMessage);
+}</pre>
+                                </div>
+                                <h3>Solution 2: Using window.onerror (For Syntax & Other Errors)</h3>
+                                <p>
+                                    If you want to catch all errors, including syntax errors, globally in a browser environment, use window.onerror:
+                                </p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+let consoleLogMessage = "";
+
+window.onerror = function(message, source, lineno, colno, error) {
+    consoleLogMessage = message;
+    console.log("Captured error:", consoleLogMessage);
+};
+
+// Intentionally causing a syntax error (in an `eval` block to avoid stopping script execution)
+try {
+    eval("const brokenVar = 1 akj"); // Syntax error
+} catch (error) {
+    consoleLogMessage = error.message;
+    console.log("Caught Syntax Error:", consoleLogMessage);
+}</pre>
+                                </div>
+                                <p>
+                                    How It Works:
+                                    window.onerror captures errors that occur anywhere in the script.
+                                    eval() allows intentional execution of invalid code without breaking the entire script.
+                                    try...catch is useful for runtime errors, but it cannot catch syntax errors outside an eval() call.
+                                    This approach stores error messages in consoleLogMessage, making them accessible for further handling. 🚀                                
+                                </p>                
+                            </div>
+                        </div>
+                    </article>
+                </div>
                 <div class="answer question-answer">
                     <article class="text-token-text-primary question-txt">
                         <h5 class="sr-only">Question: Atom Error when pulling</h5>
