@@ -87,19 +87,27 @@ font-family: verdana;
 #invoice_num_container {
     display: flex;
 }
-#to_nameTD>select {
+#itemTable{
+    border: 2px solid blue;
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
-#invoice_num_container {
+#itemTable h4{
+    background-color: blue;
 }
-#invoice_num,
-#invoice_date,
-#invoice_due_date {
+#itemTable > *{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    /* align-items: flex-start; */
+    background-color: red;
 }
-#number_label,
-#date_label,
-#invoice_due_date {
+#itemTable > * > input{
+    height: 100%;
+    
 }
-.invoiceForm_fromNameTD {
-}
-.invoiceForm_fromNameTD input {
-}
+#itemTable > * > textarea{
+    height: 100%;
+ }
