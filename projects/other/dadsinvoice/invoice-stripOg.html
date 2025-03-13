@@ -226,7 +226,8 @@ Mike Tomani 585-203-6767</textarea>
                     <option value="Expense">Expense</option>
                     <option value="Discount_aynax">Discount</option>
                 </select>
-            </div>    
+            </div>
+            
             <div class="description">
                 <h4>Description</h4>
                 <textarea name="description[]" id="description[]" 
@@ -291,10 +292,10 @@ Mike Tomani 585-203-6767</textarea>
                                             <td
                                                 style="width:110px;padding-left:2px; font-family:verdana; font-size:13px; color:#3c3c3c; font-weight:bold;">
                                                 Invoice&nbsp;Notes </td>
-                                            <td style="padding-top:5px;"
-                                                onmouseout="document.getElementById('edit_notes_msg').style.display='none';"
+                                            <td style="padding-top:5px;">
+                                                <!-- onmouseout="document.getElementById('edit_notes_msg').style.display='none';"
                                                 onmouseover="document.getElementById('edit_notes_msg').style.display='';"
-                                                onclick="edit_default_notes('invoice'); bind_notes_counter();">
+                                                onclick="edit_default_notes('invoice'); bind_notes_counter();" -->
                                                 <span id="edit_notes_name"
                                                     style="cursor:pointer;">
                                                     <!-- <img
@@ -302,7 +303,8 @@ Mike Tomani 585-203-6767</textarea>
                                                         src="images/edit_customer.png"> -->
                                                     </span>
                                                 <span id="edit_notes_msg"
-                                                    style="display:none;font-size:11px;padding:7px; position:absolute;width:190px;background:#EFF7FA; border:1px solid #cccccc; color:black; font-weight:normal;font-family:verdana;">Click
+                                                    style="
+                                                    display:none;font-size:11px;padding:7px; position:absolute;width:190px;background:#EFF7FA; border:1px solid #cccccc; color:black; font-weight:normal;font-family:verdana;">Click
                                                     here to edit the default notes. The default notes are automatically
                                                     added to all new
                                                     invoices.</span>
