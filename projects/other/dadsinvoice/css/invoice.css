@@ -82,6 +82,7 @@ font-family: verdana;
     width: 100%;
     padding: 2% 0;
     padding-left: 7px;
+    margin: 2% 0;
     font-weight: normal;
     font-family: verdana;
     font-size: 13px;
@@ -91,40 +92,48 @@ font-family: verdana;
     display: flex;
 }
 .item-table{
+    margin-top: 2.5%;
     border: 2px solid blue;
     display: flex;
-    align-items: flex-end;
     flex-wrap: wrap;
-    /* justify-content: flex-end; */
-    /* flex-grow: 1 0 100px */
 }
-
 .item-table h4{
     /* background-color: blue; */
+    font-size: 86%;
 }
 .item-table > *{
     display: flex;
     flex-direction: column;
-    height: 40px;
-    /* align-items: flex-start; */
+    /* height: 40px; */
+    justify-content: flex-start;
+    border: 1px solid magenta;
+    align-items: flex-start;
+    /* flex-grow: 1; */
     
 }
 .item-table > .item {
-    flex-basis: 5%;
-    background-color: red;
+    flex-basis: 12.5%;
+    
 }
 .item-table > .description {
-    flex-basis: 5%;
-    background-color: green;
-
+    
 }
+.item-table > .description textarea{
+    
+    min-width: 200px;
+    border: 2px solid orange;
+}
+
 .item-table > .unitPrice,
 .item-table > .quanity,
 .item-table > .item-total{
-    flex-basis: 2.5%;
+    flex-basis: 12.5%;
     flex-grow: 0;
 }
-.item-table>.item-total {
+.item-table>.unitPrice  input,
+.item-table>.quanity    input,
+.item-table>.item-total input {
+    width: 100%;
 
 }
 .item-table > * > textarea{
