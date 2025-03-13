@@ -110,8 +110,8 @@ font-family: verdana;
     align-items: flex-start;
 }
 .item-table > .item {
-    flex-basis: 12.5%;
-    
+    flex-basis: 12.5%;   
+    padding: .5% 1%
 }
 .item-table > .description {
     flex-basis: 55%;
@@ -134,4 +134,8 @@ font-family: verdana;
 .item-table>.item-total input {
     width: 100%;
 
+}
+#newItemBtn{
+    width: 20%;
+    /* background-color: blue; */
 }
