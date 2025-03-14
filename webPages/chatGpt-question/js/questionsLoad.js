@@ -2,6 +2,7 @@ export const mainTargetDiv = document.getElementById('mainTargetDiv')
 import { addCopyCodes } from "./copy-code-export.js"
 import { handleQuestions } from "./toggleQuestions.js"
 import { DropTopics } from "./dropTopic.js"
+import { letterFocus } from "./letterFocus-myChatGpt.js"
 const topics = document.querySelectorAll('.topics-container > li > a')
 let clicked = false
 topics.forEach(el => {
@@ -35,6 +36,7 @@ function fetchLessonHref(href) {
             addCopyCodes()
             handleQuestions()
             DropTopics()
+            letterFocus()
             
         })
         .catch(error => console.log('Error fetching content.html:', error));

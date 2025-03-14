@@ -1,13 +1,25 @@
+import { mainTargetDiv } from "./questionsLoad.js";
 export function DropTopics(){
     const dropTopics = document.querySelectorAll('.drop-topic');
+    let mainTargetDivFocused = false
+    mainTargetDiv.addEventListener('focusin', e => {
+        mainTargetDivFocused = true
+    })
+    mainTargetDiv.addEventListener('focusin', e => {
+        mainTargetDivFocused = false
+
+    })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
-        dropTopics.forEach(el => {
-            if (letter == el.innerText[0].toLowerCase()) {
-                el.focus()
-            }
+        
+        if (mainTargetDivFocused){
 
-        })
+            dropTopics.forEach(el => {
+                if (letter == el.innerText[0].toLowerCase()) {
+                    el.focus()
+                }
+            })
+        }
     })
     dropTopics.forEach(el => {
         el.addEventListener('click', e => {
