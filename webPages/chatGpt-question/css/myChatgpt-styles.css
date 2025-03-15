@@ -5,10 +5,21 @@
 }
 main {
     display: flex;
+    position: relative;;
     /* flex-direction: column; */
     overflow-x: hidden;
-    height: 100vmax;    
+    height: 100vh;    
     background-color: var(--mainTargetDiv-bg);
+}
+aside.draggable {
+    position: sticky;
+    top: 0;
+    width: 0;
+    left: -20%;
+    border-right: 2px solid black;
+    background-color: lightgrey;
+    transition: all 300ms;
+    height: 100vh;
 }
 .draggable h2 {
     font-size: 1rem;
@@ -24,7 +35,7 @@ nav.chatgpt-nav-icons {
     bottom: 0;
 }
 aside.draggable.active {
-    /* position: absolute; */
+    
     font-family: ui-sans-serif,/* -apple-system, */system-ui,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
     font-style:normal;
     color: var(--text-prime-color);
@@ -34,15 +45,7 @@ aside.draggable.active {
     transition: all 300ms;
     height: 100vh;
 }
-aside.draggable {
-    /* position: absolute; */
-    width: 0;
-    left: -20%;
-    border-right: 2px solid black;
-    background-color: lightgrey;
-    transition: all 300ms;
-    height: 100vmax;
-}
+
 .draggable.active *{
     position: relative;
     transition: all 300ms;

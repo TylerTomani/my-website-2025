@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="../../css/single-header.css">
     <link rel="stylesheet" href="../../webPages/chatGpt-question/css/colors-myChatgpt.css">
     <link rel="stylesheet" href="../../webPages/chatGpt-question/css/copy-code.css">
-
-
     <!-- <script type="module" src="../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script> -->
     <!-- <script type="module" src="../../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script> -->
     <script type="module" src="../../js/copy-code.js" defer></script>
@@ -79,29 +77,28 @@ if shift + that letter is pressed, how can i write a script for this and make it
                             </p>
                             <div class="code-container">
                                 <pre tabindex="0" class="copy-code">
-                                    .full-height {
-                                    height: 100vh; /* Full viewport height */
-                                    overflow: auto; /* Scrollable if content overflows */
-                                    }
+.full-height {
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Scrollable if content overflows */
+}
                                 </pre>
                             </div>
                             <p>If the element is inside a <span class="mdtxt"><strong>parent</strong></span> container, you may
                                 need:</p>
                             <div class="code-container">
                                 <pre tabindex="0" class="copy-code">
-                                    html, body {
-                                    height: 100%;
-                                    margin: 0;
-                                    }
-        
-                                    .container {
-                                    <span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
-                                    display: flex; /* Optional: for centering content */
-                                    align-items: center;
-                                    justify-content: center;
-                                    }
-        
-                                </pre>
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    <span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
+    display: flex; /* Optional: for centering content */
+    align-items: center;
+    justify-content: center;
+}        
+</pre>
                             </div>
                             <h3>2. JavaScript Approach (Handles Dynamic Changes)</h3>
                             <p>
