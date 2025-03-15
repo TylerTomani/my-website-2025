@@ -3,6 +3,9 @@ export function letterFocus() {
     let iLetter = 0;
     let currentLetter = '';
 
+    function getAnswerSteps(){
+        
+    }
     addEventListener('keydown', (e) => {
         const allFocusEls = document.querySelectorAll('[id]');
         let letter = e.key.toLowerCase();

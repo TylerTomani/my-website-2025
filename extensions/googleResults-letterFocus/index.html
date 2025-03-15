@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>googleResults-letterFocus</title>
-    <link rel="stylesheet" href="../chatGpt-question/css/myChatGpt-header.css">
-    <script type="module" src="../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script>
-    <script type="module" src="../../vsCode-shortCuts-regx/js/copy-code.js" defer></script>
+    <link rel="stylesheet" href="../../css/single-header.css">
+    <link rel="stylesheet" href="../../webPages/chatGpt-question/css/colors-myChatgpt.css">
+    <link rel="stylesheet" href="../../webPages/chatGpt-question/css/copy-code.css">
+
+
+    <!-- <script type="module" src="../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script> -->
+    <!-- <script type="module" src="../../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script> -->
+    <script type="module" src="../../js/copy-code.js" defer></script>
 </head>
 <body>
     <header>
@@ -24,45 +29,143 @@
                 to my chatgpt questions and add this question and answer to that page 
                 with that format got it good go
             </p>
+            <p>
+                Put the answer to this but just add it to the chatgpt-questions, (see <a id="chatgptQuestion" href="../chatGpt-question/index.html
+                        ">chatgpt-question project</a> )
+            </p>
+            <p>
+                This project is saved in my <code>ChromeExtensions</code> folder
+            </p>
+            <p>
+                type
+            </p>
+            <div class="code-container">
+                <pre tabindex="0" class="copy-code">chrome://extensions/</pre>
+            </div>
         </article>
-        <p>
-            Put the answer to this but just add it to the chatgpt-questions, (see <a id="chatgptQuestion" href="../chatGpt-question/index.html
-            ">chatgpt-question project</a> )
-        </p>
-        <p>
-            This project is saved in my <code>ChromeExtensions</code> folder
-        </p>
-        <p>
-            type
-        </p>
-        <div class="code-container">
-            <pre tabindex="0" class="copy-code">chrome://extensions/</pre>
-        </div>
-       <h2>Working so far not perfect, work on fixing anatomy and chatgpt question then, place this page 
-        as an answer in chatgpt questions
-        <a id="chatgptQuestion" href="../chatGpt-question/index.html
-                    ">chatgpt-question project</a>
-       </h2> 
-       <p>just in case i loose question it's pasted here below in a pre</p>
-       <pre style="font-size: 20%; margin: 2% 5%">
-        ChatGPT
+        <!-- Chatgpt question nanswer -->
+            <div class="question-answer">
+                <article class="text-token-text-primary question-txt">
+                    <h5 class="sr-only r">I lost/ don't know where the original question is in chatgpt</h5>
+                    <div class="text-base">
+                        <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
+                                                     it to a pre so i can copy it  -->
+                        <div class="whitespace-pre-wrap">
+                            <pre tabindex="0" class="copy-code dropQuestion">You said:i'm trying make an extension to add to chrome that will apply my letter focus scripts, above are the html
 
-Share
+want to target, the divs with a role="heading" are the main search results on googles, the a tage with the
+data-agch="HJ3bqe" are the heading sub results, i would love to target both so that if i press the first letter in one
+of the results the focus goes to the result, as you can see the first div with role "heading" and the span inside
+containing the text Stack Overflow... is the first result in the google search result , if i press the "S" I would love
+the focus to go there then if i press "k", it will then go to Knowing Sharing Platform, if press "r" the focus will go
+to Rest New..., basically everytime i press a letter on the keyboard the focus will go to the first element with the
+text that has that first letter, then if the same letter is pressed again it will go to the next element containing that
+letter as its first character, but, if shift and that letter is pressed it will go to the previous element and cycle
+through the page, for example if the page first opens and shift + "s" is pressed it shouldn't go to Stack Overflow... it
+should go to the bottom of the page to the last element with that letter, and continue decending through the elements up
+if shift + that letter is pressed, how can i write a script for this and make it an extension for chrome</pre>
+                        </div>
+                    </div>
+                </article>
+                <article class="text-token-text-primary answer-txt">
+                    <h6 class="sr-only">Chat Gpt Said: </h6>
+                    <div class="text-base">
+                        <!-- .markdown .prose is 5th inner child of the 2nd child element 
+                                                                    '.group/conversation-turn' of .text-base   -->
+                        <div class="markdown prose">
+                            <h3>1. Pure CSS Approach (Best for Static Layouts)</h3>
+                            <p>
+                                If you just need the element to always be the full height of the viewport:
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
+                                    .full-height {
+                                    height: 100vh; /* Full viewport height */
+                                    overflow: auto; /* Scrollable if content overflows */
+                                    }
+                                </pre>
+                            </div>
+                            <p>If the element is inside a <span class="mdtxt"><strong>parent</strong></span> container, you may
+                                need:</p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
+                                    html, body {
+                                    height: 100%;
+                                    margin: 0;
+                                    }
+        
+                                    .container {
+                                    <span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
+                                    display: flex; /* Optional: for centering content */
+                                    align-items: center;
+                                    justify-content: center;
+                                    }
+        
+                                </pre>
+                            </div>
+                            <h3>2. JavaScript Approach (Handles Dynamic Changes)</h3>
+                            <p>
+                                If the element’s height needs to dynamically adjust when the window resizes:
+                            </p>
+        
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
+                                    function setFullHeight() {
+                                    const element = document.querySelector('.full-height');
+                                    if (element) {
+                                    element.style.height = `${window.innerHeight}px`;
+                                    }
+                                    }
+        
+                                    // Run on load and resize
+                                    window.addEventListener('load', setFullHeight);
+                                    window.addEventListener('resize', setFullHeight);
+        
+                                </pre>
+                            </div>
+        
+                            <p>
+                                <strong>Alternative Fix:</strong> Using a Single Event Listener
+                                Instead of attaching an event listener to each .copy-code element, delegate it to the
+                                document:
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
+                                    document.addEventListener('keydown', e => {
+                                    let letter = e.key.toLowerCase()
+                                    if (letter == 'enter') {
+                                    if (e.target.classList.contains('copy-code')) {
+                                    e.preventDefault()
+                                    toggleImgVid(e)
+                                    return // Prevent further execution
+                                    }
+                                    toggleImgVid(e)
+                                    addTabIndexes(e)
+                                    }
+                                    })</pre>
+                            </div>
+                            <p>
+                                This avoids multiple event listeners and prevents duplicate execution.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- ------------------------------------------------------- -->
+        
+
+        
+       
+       
 
 
-You said:
-<!-- Results -->
-<div class="CCgQ5 vCa9Yd QfkTvb N8QANc Va3FIb EE3Upf" aria-level="3" role="heading"><span>Stack Overflow - Integrate
-        With Your Tech Stack</span></div>
-<!-- Below are sub results  -->
-<a data-agch="HJ3bqe" data-impdclcc="1" data-agdh="fvd3vc" data-rw="https://www...">
-Custom | Pricing &amp; Plans</a>
-<a data-agch="HJ3bqe" data-impdclcc="1" data-agdh="fvd3vc" data-rw="https://www.googleadservices.com/pagead..."
->Knowing Sharing Platform</a>
+
+
+
 <!-- Next Result -->
 <div class="CCgQ5 vCa9Yd QfkTvb N8QANc Va3FIb EE3Upf" aria-level="3" role="heading"><span>REST News API for
         Developers</span></div>
-i'm trying make an extension to add to chrome that will apply my letter focus scripts, above are the html elements i want to target, the divs with a role="heading" are the main search results on googles, the a tage with the data-agch="HJ3bqe" are the heading sub results, i would love to target both so that if i press the first letter in one of the results the focus goes to the result,  as you can see the first div with role "heading" and the span inside containing the text Stack Overflow... is the first result in the google search result , if i press the "S" I would love the focus to go there then if i press "k", it will then go to Knowing Sharing Platform, if press "r" the focus will go to Rest New..., basically everytime i press a letter on the keyboard the focus will go to the first element with the text that has that first letter, then if the same letter is pressed again it will go to the next element containing that letter as its first character, but, if shift and that letter is pressed it will go to the previous element and cycle through the page, for example if the page first opens and shift + "s" is pressed it shouldn't go to Stack Overflow... it should go to the bottom of the page to the last element with that letter, and continue decending through the elements up if shift + that letter is pressed, how can i write a script for this and make it an extension  for chrome
+
 ChatGPT said:
 ChatGPT
 Memory updated
@@ -202,5 +305,6 @@ The extension should now be active!
 Let me know if you need further guidance! 🚀
        </pre>
     </main>
+    
 </body>
 </html>
