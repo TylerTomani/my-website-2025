@@ -62,6 +62,45 @@ git reset --hard</pre>
                     
                 </section>
             </section>
+            <!-- Code Most used -->
+            <section class="section">
+                <header>
+                    <h3><a id="codeMostUsed" href="#" class="section-title">Code Most Used</a></h3>
+                </header>
+                <section class="sub-section">
+                    <div class="cmd-regex">
+                        <h4>Incrementing / Decrements Letter Focus</h4>
+                        <p style="color:red;font-size: 120%;" class="r">ironically this page also need this function</p>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+// This page has really good letter focus cycle
+if(letter == 'c' && !e.metaKey){
+    if(!e.shiftKey){
+        copyCodes[iCopyCodes].focus()
+        iCopyCodes = (iCopyCodes + 1) % copyCodes.length
+
+    } else{
+        iCopyCodes = (iCopyCodes - 1 + copyCodes.length) % copyCodes.length
+        
+    }
+    copyCodes[iCopyCodes].focus()
+    console.log(iLetter)
+}</pre>
+                        </div>
+                    </div>
+                    <div class="cmd-regex">
+                        <h4>CamelCase function</h4>
+                        <div class="code-container">
+                            <pre tabindex="0" class="copy-code">
+function toCamelCase(str) {
+    return str
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase());
+}</pre>
+                        </div>
+                    </div>
+                </section>
+            </section>
             <!-- command-shortcuts -->
             <section class="section">
                 <header><h3><a id="commandShorcuts" href="#" class="section-title">command shortcuts</a></h3></header>
@@ -80,6 +119,8 @@ git reset --hard</pre>
                     </div>
                 </section>
             </section>
+            
+            
         </div>        
         
     </main>
