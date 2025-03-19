@@ -34,8 +34,15 @@ export function DropTopics(){
             }
         })
     })
+    function hideAllTopicQuestionsContainers(){
+        dropTopics.forEach(el =>  {
+            const topic = getTopic(el.parentElement)
+            const questionsContainer = topic.querySelector('.questions-container')
+            questionsContainer.classList.add('hide')
+        })
+    }
+    hideAllTopicQuestionsContainers()
 }
-
 function toggleTopicQuestions(e){
     const topic = getTopic(e.target.parentElement)
     const questionsContainer = topic.querySelector('.questions-container')
