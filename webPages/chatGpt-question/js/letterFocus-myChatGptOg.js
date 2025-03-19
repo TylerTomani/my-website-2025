@@ -1,74 +1,44 @@
-export const toggleDraggable = document.querySelector('#toggleSideBtn')
-import { mainTargetDiv } from "./questionsLoad.js"
-const allIdEls = document.querySelectorAll('[id]')
-const homelink = document.getElementById('homelink')
-// iLetter is index to increment up thru letterIds
-let iLetter
-let currentLetter
-let currentEl
-let currentResourceFocus = false
-let letterIds = []
-let lastIndex, nextIndex
-let mainTargetDivFocused = false
-addEventListener('DOMContentLoaded', e => {
+export function letterFocus() {
+    let letteredEls = [];
+    let iLetter = 0;
+    let currentLetter = '';
 
-})
-if(mainTargetDiv){
-
-    mainTargetDiv.addEventListener('focus', e => {
-        mainTargetDivFocused = true
-    })
-    mainTargetDiv.addEventListener('focusout', e => {
-        mainTargetDivFocused = false
-    })
-}
-addEventListener('keydown', e => {
-    let letter = e.key.toLowerCase()
-    letterIds = []
-    if (!mainTargetDivFocused){
-        allIdEls.forEach(el => {
-            if (letter == el.id[0].toLowerCase() && !el.classList.contains('hide')) {
-                letterIds.push(el)
+    
+    addEventListener('keydown', (e) => {
+        const allFocusEls = document.querySelectorAll('[id]');
+        let letter = e.key.toLowerCase();
+        if (letter == 'm' && e.target.id == 'mainTargetDiv'){
+            scrollTo(0,0)
+        }
+        // Rebuild the array of elements matching the first letter
+        letteredEls = [];
+        allFocusEls.forEach(el => {
+            if (el.id[0].toLowerCase() === letter) {
+                letteredEls.push(el);
             }
-        })
-        // console.log(letterIds)
-        if(letterIds){
-            if (currentLetter == letter ) {
-                iLetter = (iLetter + 1) % letterIds.length
-                if(letterIds[iLetter])
-                    letterIds[iLetter].focus()
-                
-            } else if (letterIds.length > 0) {
-                iLetter = 0
-                letterIds[0].focus()
+        });
+
+        if (letteredEls.length === 0) return; // Exit if no elements match
+
+        // If pressing a different letter, reset the index
+        if (letter !== currentLetter) {
+            iLetter = 0;
+        } else {
+            if (!e.shiftKey) {
+                // Move forward
+                iLetter = (iLetter + 1) % letteredEls.length;
+            } else {
+                // Move backward correctly
+                iLetter = (iLetter - 1 + letteredEls.length) % letteredEls.length;
             }
         }
-        currentLetter = letter
-        currentEl = e.target
-    }
-    switch (letter) {
-        case 'a':
-            toggleDraggable.focus()
-            break
-        case 's':
-            toggleDraggable.focus()
-            break
-        case 'm':
-            mainTargetDiv.focus()
-            scrollTo(0, 0)
-            break
-        case 'h':
-            homelink.focus()
-            scrollTo(0, 0)
-            break
-    }
-    if (letter == 'h') {
-        scrollTo(0, 0)
-    }
-});
 
-const questions = document.querySelectorAll('.dropQuestion')
+        // Focus on the correct element
+        letteredEls[iLetter].focus();
 
-questions.forEach(el => {
+        // Update current letter for next key press
+        currentLetter = letter;
+    });
+}
 
-})
+letterFocus();
