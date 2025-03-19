@@ -1,4 +1,4 @@
-<h4>CSS</h4>
+    <h4>CSS</h4>
 <div class="topics-questions">
     <!-- Installing Git for Visual Studio code (pull error) -->   
     <div class="topic">
@@ -100,6 +100,123 @@ document.addEventListener('keydown', e => {
                                 </div>
                                 <p>
                                     This avoids multiple event listeners and prevents duplicate execution.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- ------------------------------------------------------- -->
+            </div>
+        </div>
+    </div>
+    <!-- Installing Git for Visual Studio code (pull error) -->   
+    <div class="topic">
+        <a id="alignItemsInFlex" tabindex="0" href="#" class="drop-topic">Align items in flex
+        </a>
+        <div class="questions-container">
+            <div class="question-container">
+                <!-- Below in the the articles are the same format is chatgpt -->
+                <!-- I'm keeping the html the same but adding the classes:
+                       questions-answer, question-txt, answer-txt-->
+                <!--  Aligning items in Flex-->
+                <div class="question-answer">
+                    <article class="text-token-text-primary question-txt">
+                        <h5 class="sr-only">Aligning items in Flex</h5>
+                        <div class="text-base">
+                            <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
+                                                             it to a pre so i can copy it  -->
+                            <div class="whitespace-pre-wrap">
+                                <pre tabindex="0" class="copy-code dropQuestion">
+why is the following css not placing the .xbox at the end of the .task-container
+
+
+
+&lt;div class="project-container">
+    &lt;div class="todo-app">
+        &lt;h2>To-Do List &lt;img src="images/list-icon-screenshot.png" alt="">&lt;/h2>
+            &lt;div class="row">
+                &lt;input type="text" id="input-box" placeholder="Add Task Here" value="clean kitchen">
+                &lt;!-- ??? This Does NOT work with module scripts ??? -->
+                &lt;!-- &lt;button id="addBtn" onclick="addTask()">Add&lt;/button> -->
+                &lt;button id="addBtn">Add&lt;/button>
+            &lt;/div>
+
+        &lt;ul id="task-container">
+        &lt;li id="task1" tabindex="0" class="checked">&lt;span class="checkbox">o&lt;/span>Task 1&lt;/li>
+        &lt;li id="task2" tabindex="0" >&lt;span class="checkbox">o&lt;/span>task 2
+        &lt;span class="xbox">x&lt;/span>
+        &lt;/li>
+        &lt;li id="task3" tabindex="0" >&lt;span class="checkbox">o&lt;/span>task 3 &lt;/li>
+        &lt;/ul>
+        &lt;/div>
+&lt;/div>
+
+#task-container {
+    display: flex;
+    flex-direction: column;
+
+}
+#task-container>li {
+    list-style: none;
+    font-size: 17px;
+    padding: 1px;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+}
+#task-container>li>.xbox {
+    justify-self: flex-end;
+    right: 0;
+}</pre>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="text-token-text-primary answer-txt">
+                        <h6 class="sr-only">Chat Gpt Said: </h6>
+                        <div class="text-base">
+                
+                            <div class="markdown prose">
+                                <p>
+                                    Your .xbox element is not aligning at the end of the .task-container because justify-self does not
+                                    work on flex items
+                                    unless their parent has display: grid. Since your li elements are using display: flex, you need to
+                                    use margin-left: auto
+                                    to push .xbox to the right.
+                                </p>
+                                <p>
+                                    Modify your CSS like this:
+                                </p>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+#task-container>li {
+    list-style: none;
+    font-size: 17px;
+    padding: 1px;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+}
+                                    </pre>
+                                </div>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+#task-container>li>.xbox {
+    margin-left: auto; /* Push the .xbox to the right */
+}
+                                    </pre>
+                
+                                </div>
+                                <h3>Why does this work?</h3>
+                                <ul>
+                                    <li>display: flex on li makes its children (including .xbox) flex items.</li>
+                                    <li>margin-left: auto on .xbox forces it to take up all the remaining space, pushing it to the end.
+                                    </li>
+                                </ul>
+                                <p>
+                                    Let me know if you need further refinements! 🚀
                                 </p>
                             </div>
                         </div>
