@@ -1,5 +1,5 @@
 import { mainTargetDiv } from "./letterfocus-index.js";
-import { letterFocusInvoice } from "./letterFocus-invoice.js";
+// import { letterFocusInvoice } from "./letterFocus-invoice.js";
 // import { cycleInvoiceElements } from "./letterFocus-invoice.js";
 function fetchHtmlData(href) {
     fetch(href)
@@ -8,7 +8,7 @@ function fetchHtmlData(href) {
         })
         .then(html => {
             mainTargetDiv.innerHTML = html;
-            letterFocusInvoice();
+            // letterFocusInvoice();
             // cycleInvoiceElements();
         })
         .catch(error => console.error("Error fetching HTML:", error));

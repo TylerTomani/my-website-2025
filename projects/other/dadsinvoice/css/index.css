@@ -25,13 +25,12 @@ main {
     box-shadow: 0 0 3px 3px sandybrown;
 }
 nav.btm-nav {
-    height: 5vh;
+    /* height: 15vh; */
 }
 nav.btm-nav > ul{
     display: flex;
     list-style: none;
     border: 1px solid black;
-    height: 100%;
 }
 main>nav.btm-nav>ul li {
     border-bottom: none;
