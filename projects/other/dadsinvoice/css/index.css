@@ -26,7 +26,7 @@ main {
     box-shadow: 0 0 3px 3px sandybrown;
 }
 nav.btm-nav {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     /* height: 15vh; */
     margin-top: 5%;
