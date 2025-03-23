@@ -139,3 +139,8 @@ font-family: verdana;
     width: 20%;
     /* background-color: blue; */
 }
+
+input,
+textarea {
+    pointer-events: none;
+}
