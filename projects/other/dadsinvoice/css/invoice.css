@@ -4,6 +4,8 @@
 }
 main {
     margin: 0 3%;
+    overflow-x: hidden;
+    
 
 }
 #invoiceHeading{
@@ -91,6 +93,7 @@ font-family: verdana;
 }
 #invoice_num_container {
     display: flex;
+    width: 100%;
 }
 .items-container {
     width: 100%;
