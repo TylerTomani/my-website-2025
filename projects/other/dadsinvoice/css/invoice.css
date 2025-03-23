@@ -158,8 +158,8 @@ input,
 textarea {
     /* pointer-events: none; */
     font-size: 16px;
-        /* Prevent auto-zoom */
-        /* transform: scale(1); */
-        /* Prevent unwanted zooming */
-
+    /* Prevent auto-zoom */
+    transform: scale(1);
+    /* Prevent unwanted zooming */
+    touch-action: manipulation;
 }
