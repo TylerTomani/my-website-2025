@@ -65,5 +65,10 @@ export function letterFocusInvoice(){
         
         
     });
+    document.addEventListener('touchstart', function (event) {
+        if (event.target.matches('input, textarea')) {
+            event.preventDefault();
+        }
+    }, { passive: false });
 }
 
