@@ -18,8 +18,11 @@ export function addItem(){
         itemTables = document.querySelectorAll('.item-table')
         e.preventDefault()
         createItem(itemTables)        
-        
-        
+    })
+    newItemBtn.addEventListener('mousedown', e => {
+        itemTables = document.querySelectorAll('.item-table')
+        e.preventDefault()
+        createItem(itemTables)        
     })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
