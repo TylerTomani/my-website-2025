@@ -16,6 +16,7 @@ body>header {
 main {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 #mainTargetDiv{
     border: 1px solid black;
@@ -25,26 +26,29 @@ main {
     box-shadow: 0 0 3px 3px sandybrown;
 }
 nav.btm-nav {
-    height: 15vh;
+    position: sticky;
+    bottom: 0;
+    /* height: 15vh; */
+    margin-top: 5%;
 }
 nav.btm-nav > ul{
-    position: absolute;
     bottom: 2.5%;
-    display: inline-flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    display: flex;
     list-style: none;
     border: 1px solid black;
 }
 nav.btm-nav>ul li {
     border-bottom: none;
+    flex-basis: 30%;
     display: flex;
-    margin: 0 10%;
 }
 nav.btm-nav>ul li a {
     display: inline-block;
+    /* margin: 0 10%; */
     width: 100%;
     height: 100%;
-    /* padding: 1%; */
+    padding: 5%;
     text-decoration: none;
     /* background-color: blue; */
 }
