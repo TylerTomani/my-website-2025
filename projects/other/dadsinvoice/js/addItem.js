@@ -9,6 +9,7 @@ export function addItem(){
         let letter = e.key.toLowerCase()
         itemTables = document.querySelectorAll('.item-table')
         if(letter == 'enter'){
+            e.preventDefault()
             createItem(itemTables)        
         }
         
