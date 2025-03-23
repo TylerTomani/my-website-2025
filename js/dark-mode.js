@@ -9,7 +9,10 @@ addEventListener('keydown', e => {
     }
 })
 
-darkmodeBtn.addEventListener('click', () => { body.classList.toggle('darkMode') })
+darkmodeBtn.addEventListener('click', (e) => { 
+    e.preventDefault()
+    body.classList.toggle('darkMode') 
+})
 darkmodeBtn.addEventListener('keydown', (e) => {
     let letter = e.key.toLowerCase()
     if (letter == 'enter') {
