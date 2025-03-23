@@ -96,13 +96,13 @@ export function addItem(){
         itemsContainer.appendChild(itemTable)
     }
     
-    const viewport = document.querySelector("meta[name=viewport]");
-    document.addEventListener("focusin", () => {
-        viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1");
-    });
-    document.addEventListener("focusout", () => {
-        viewport.setAttribute("content", "width=device-width, initial-scale=1");
-    });
+    // const viewport = document.querySelector("meta[name=viewport]");
+    // document.addEventListener("focusin", () => {
+    //     viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1");
+    // });
+    // document.addEventListener("focusout", () => {
+    //     viewport.setAttribute("content", "width=device-width, initial-scale=1");
+    // });
 }
 function getItemsContainer(parent){
     if(parent.classList.contains('items-container')){
