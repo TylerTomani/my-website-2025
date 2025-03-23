@@ -13,6 +13,13 @@ export function addItem(){
         }
         
     })
+    newItemBtn.addEventListener('click', e => {
+        itemTables = document.querySelectorAll('.item-table')
+        e.preventDefault()
+        createItem(itemTables)        
+        
+        
+    })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
         itemTables = document.querySelectorAll('.item-table')
