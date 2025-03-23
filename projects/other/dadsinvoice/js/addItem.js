@@ -95,6 +95,12 @@ export function addItem(){
         itemTable.appendChild(itemTotal)
         itemsContainer.appendChild(itemTable)
     }
+    document.addEventListener("focusin", () => {
+        document.documentElement.style.setProperty("zoom", "1");
+    });
+    document.addEventListener("focusout", () => {
+        document.documentElement.style.removeProperty("zoom");
+    });
 }
 function getItemsContainer(parent){
     if(parent.classList.contains('items-container')){
