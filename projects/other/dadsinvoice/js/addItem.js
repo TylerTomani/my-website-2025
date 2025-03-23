@@ -95,11 +95,13 @@ export function addItem(){
         itemTable.appendChild(itemTotal)
         itemsContainer.appendChild(itemTable)
     }
+    
+    const viewport = document.querySelector("meta[name=viewport]");
     document.addEventListener("focusin", () => {
-        document.documentElement.style.setProperty("zoom", "1");
+        viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1");
     });
     document.addEventListener("focusout", () => {
-        document.documentElement.style.removeProperty("zoom");
+        viewport.setAttribute("content", "width=device-width, initial-scale=1");
     });
 }
 function getItemsContainer(parent){
