@@ -5,7 +5,7 @@
 main {
     margin: 0 3%;
     overflow-x: hidden;
-    
+
 
 }
 #invoiceHeading{
@@ -150,4 +150,9 @@ font-family: verdana;
 input,
 textarea {
     pointer-events: none;
+    font-size: 16px;
+        /* Prevent auto-zoom */
+        transform: scale(1);
+        /* Prevent unwanted zooming */
+
 }
