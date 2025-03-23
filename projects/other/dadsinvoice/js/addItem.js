@@ -14,11 +14,11 @@ export function addItem(){
         }
         
     })
-    newItemBtn.addEventListener('click', e => {
-        itemTables = document.querySelectorAll('.item-table')
-        e.preventDefault()
-        createItem(itemTables)        
-    })
+    // newItemBtn.addEventListener('click', e => {
+    //     itemTables = document.querySelectorAll('.item-table')
+    //     e.preventDefault()
+    //     createItem(itemTables)        
+    // })
     newItemBtn.addEventListener('mousedown', e => {
         itemTables = document.querySelectorAll('.item-table')
         e.preventDefault()
