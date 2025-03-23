@@ -123,13 +123,13 @@ font-family: verdana;
     min-width: 100px;
 }
 
-.item-table > .unitPrice,
+.item-table > .unit-price,
 .item-table > .quanity,
 .item-table > .item-total{
     flex-basis: 12.5%;
     flex-grow: 1;
 }
-.item-table>.unitPrice  input,
+.item-table>.unit-price  input,
 .item-table>.quanity    input,
 .item-table>.item-total input {
     width: 100%;

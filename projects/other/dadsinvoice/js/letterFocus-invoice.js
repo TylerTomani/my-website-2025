@@ -1,6 +1,6 @@
 import { invoicePage } from "./letterfocus-index.js"
 export let textInputFocused = false
-
+export let newItemBtn = document.querySelector('#newItemBtn')    
 
 export function letterFocusInvoice(){
     const toName = document.querySelector('#to_name')
@@ -12,7 +12,7 @@ export function letterFocusInvoice(){
     const itemsContainer = document.querySelector('#items-container')
     const invoiceNotes = document.querySelector('#invoice_notes')
     const textAreaInputs = document.querySelectorAll('textarea')
-    
+    newItemBtn = document.querySelector('#newItemBtn')    
         
     
     function field_onfocus(element, placeholderText) {
@@ -49,10 +49,9 @@ export function letterFocusInvoice(){
         let isShift = e.shiftKey
         let letter = e.key.toLowerCase()
         if (!textInputFocused) {
-            cycleInvoiceElements(e)
         }
         if (isShift) {
-            cycleInvoiceElements(e)
+
         }
         // Just for now
         if(letter == 'i'){
@@ -60,38 +59,11 @@ export function letterFocusInvoice(){
             dataTableItem.focus()
             
         }
+        if(letter == 'n'){
+            newItemBtn.focus()
+        }
+        
         
     });
 }
- function cycleInvoiceElements(e){
-    let letter = e.key.toLowerCase()
-    let isShift = e.shiftKey
-    if (!textInputFocused) {
-        if (letter == 'f') {
-            scrollTo(0, 0)
-            fromName.focus()
-        }
-        if (letter == 'h') {
-            scrollTo(0, 0)
-            homelink.focus()
-        }
 
-        if (letter == 'l') {
-            listPage.focus()
-        }
-        if (letter == 't') {
-            scrollTo(0, 0)
-            to.focus()
-        }
-        if (letter == 'n') {
-            toName.focus()
-            scrollTo(0, 0)
-            console.log('n')
-            console.log(toName)
-        }
-        if (letter == 'i') {
-            // cycleIitems(isShift)
-        }
-    }
-}
-letterFocusInvoice();

@@ -1,6 +1,6 @@
 import { mainTargetDiv } from "./letterfocus-index.js";
-// import { letterFocusInvoice } from "./letterFocus-invoice.js";
-// import { cycleInvoiceElements } from "./letterFocus-invoice.js";
+import { letterFocusInvoice } from "./letterFocus-invoice.js";
+import { addItem } from "./addItem.js";
 function fetchHtmlData(href) {
     fetch(href)
         .then(response => {
@@ -8,7 +8,8 @@ function fetchHtmlData(href) {
         })
         .then(html => {
             mainTargetDiv.innerHTML = html;
-            // letterFocusInvoice();
+            letterFocusInvoice();
+            addItem()
             // cycleInvoiceElements();
         })
         .catch(error => console.error("Error fetching HTML:", error));
@@ -28,6 +29,7 @@ document.querySelectorAll('a').forEach(el => {
         el.addEventListener('click', e => {
             e.preventDefault();
             fetchHtmlData(el.href);
+            // letterFocusInvoice()
         });
     }
 });
