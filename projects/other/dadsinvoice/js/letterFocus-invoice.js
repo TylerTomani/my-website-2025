@@ -1,7 +1,7 @@
-import { invoicePage } from "./letterfocus-index.js"
+// import { invoicePage } from "./letterfocus-index.js"
 export let textInputFocused = false
 export let newItemBtn = document.querySelector('#newItemBtn')    
-
+import { updateItemTables } from "./addDeleteItem.js"
 export function letterFocusInvoice(){
     const toName = document.querySelector('#to_name')
     const toNewCustomer = document.querySelector('#to_new_customer')
@@ -13,7 +13,22 @@ export function letterFocusInvoice(){
     const invoiceNotes = document.querySelector('#invoice_notes')
     const textAreaInputs = document.querySelectorAll('textarea')
     
-    const itemsTables = document.querySelectorAll('.item-table')
+    
+    let itemsTables = updateItemTables()
+    addEventListener('keydown', e => {
+        let isShift = e.shiftKey
+        let letter = e.key.toLowerCase()
+        if (!textInputFocused) {
+            tempLetterFocus(e, letter)
+        }
+        if (isShift) {
+        }
+        // Just for now
+        
+        
+
+
+    });
     itemsTables.forEach(el => {
         el.addEventListener('focusin', e => {
             const deleteItemBtn = e.target.querySelector('.delete-item-btn')
@@ -60,18 +75,7 @@ export function letterFocusInvoice(){
         })
         
     });
-    addEventListener('keydown', e => {
-        let isShift = e.shiftKey
-        let letter = e.key.toLowerCase()
-        if (!textInputFocused) {
-            tempLetterFocus(e, letter)
-        }
-        if (isShift) {
-        }
-        // Just for now
-        
-        
-    });
+    
     function tempLetterFocus(e,letter){
         if (letter == 'i') {
             // const dataTableItem = document.querySelector('#itemSelect0')
@@ -87,14 +91,7 @@ export function letterFocusInvoice(){
             e.preventDefault()
             unitPrice.focus()
         }
-        if (letter == 'x') {
-            const deleteItemBtn = document.querySelector('.delete-item-btn')
-            if (deleteItemBtn) {
-                deleteItemBtn.classList.add('active')
-                // console.log(e.tar)
-                deleteItemBtn.focus()
-            }
-        }
+        
         if (letter == 'n') {
             newItemBtn.focus()
         }

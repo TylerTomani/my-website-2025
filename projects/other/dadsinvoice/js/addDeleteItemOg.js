@@ -1,51 +1,83 @@
 import { newItemBtn } from "./letterFocus-invoice.js";
-export function updateItemTables() {
-    const itemTables = document.querySelectorAll('.item-table')
-    return itemTables
-}
 export function addDeleteItem(){
-    let itemTables 
+     
     const itemsContainer = document.querySelector('.items-container')
-    
+    let itemFocused = false
+    let itemTablesArr,deleteItemBtns
+    function updateItemTables(){
+        itemTablesArr = document.querySelectorAll('.item-table')
+    }
+    function updateDeleteItemBtns(){
+        deleteItemBtns = document.querySelectorAll('.delete-item-btn')
+    }
+    updateItemTables()
     newItemBtn.addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
+        updateItemTables()
         if(letter == 'enter'){
-            itemTables = updateItemTables()
+            updateDeleteItemBtns()
             e.preventDefault()
-            createItem(itemTables)        
+            createItem(itemTablesArr)        
         }
     })
     
-    newItemBtn.addEventListener('mousedown', e => {
-        e.preventDefault()
+    
+    updateDeleteItemBtns()
+    if(deleteItemBtns){
+        deleteItemBtns.forEach(el  => {
+            el.addEventListener('keydown',e => {
+                let letter = e.key.toLowerCase()
+                if(letter == 'enter'){
+                    updateItemTables()
+                    deleteItem(e, letter)
+                }       
+            })
+        })
+    }
+    function deleteItem(e,letter){
+        const itemTable = getItemTable(e.target.parentElement)
         updateItemTables()
+        let iItemTable = [...itemTablesArr].indexOf(itemTable)
+        console.log(iItemTable)
+        console.log(itemTablesArr)
+        // itemTablesArr.splice(iItemTable,1)
+        // updateItemTables()
+        
+    }
+    // newItemBtn.addEventListener('click', e => {
+    //     itemTables = document.querySelectorAll('.item-table')
+    //     e.preventDefault()
+    //     createItem(itemTables)        
+    // })
+    newItemBtn.addEventListener('mousedown', e => {
+        itemTables = document.querySelectorAll('.item-table')
+        e.preventDefault()
         createItem(itemTables)        
     })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
-        itemTables = updateItemTables()
+        updateItemTables()
         if (!isNaN(letter)) {
-            console.log(itemTables)
             const intLet = parseInt(letter)
-            if(intLet <= itemTables.length){
-                console.log(intLet - 1)
-                const itemTable = itemTables[intLet - 1]
-                // const itemSelectBox = itemTable.querySelector('.item select')
-                itemTable.focus()
+            console.log(intLet)
+            if(intLet <= itemTablesArr.length){
+                const itemSelectBox = itemTablesArr[intLet - 1].querySelector('.item select')
+                // console.log(itemBox)
+                itemSelectBox.focus()
             }
         }
     })
-    function createItem(itemTables){
+    function createItem(itemTablesArr){
         const itemTable = document.createElement('div')
         itemTable.classList.add('item-table')
         itemTable.setAttribute('tabindex','0')
-        itemTable.id = `itemTable${itemTables.length - 1}`
+        itemTable.id = `itemTable${itemTablesArr.length - 1}`
         const item = document.createElement('div')
         item.classList.add('item')
         itemTable.appendChild(item)
         item.innerHTML = `
                     <h4>Item</h4>
-                    <select name="item[]" id="itemSelect${itemTables.length}" class="inputInvoiceDataItem ">
+                    <select name="item[]" id="itemSelect${itemTablesArr.length}" class="inputInvoiceDataItem ">
                         <option value="" selected="selected"></option>
                         <option value="Days">Days</option>
                         <option value="Hours">Hours</option>
@@ -59,10 +91,11 @@ export function addDeleteItem(){
         description.classList.add('description')
         description.innerHTML = `
                     <h4>Description</h4>
-                    <textarea name="description[]" id="description${itemTables.length}"
+                    <textarea name="description[]" id="description${itemTablesArr.length}"
                     class="inputInvoiceDataDescription"></textarea>
                 `
         itemTable.appendChild(description)
+    
         const unitPrice = document.createElement('div')
         unitPrice.classList.add('unit-price')
         unitPrice.innerHTML = `
@@ -72,6 +105,7 @@ export function addDeleteItem(){
                             value="0.00">
                 `
         itemTable.appendChild(unitPrice)
+    
         const quanity = document.createElement('div')
         quanity.classList.add('quanity')
         quanity.innerHTML = `
@@ -80,6 +114,7 @@ export function addDeleteItem(){
                         class="inputInvoiceDataPriceOrQty" value="0.">
                 `
         itemTable.appendChild(quanity)
+    
         const itemTotal = document.createElement('div')
         itemTotal.classList.add('item-total')
         itemTotal.innerHTML = `
@@ -87,10 +122,11 @@ export function addDeleteItem(){
                     <input name="total[]" id="total${itemTable.length}" type="text" autocomplete="nope" readonly="" class="inputInvoiceDataAmount"
                         value="0.00">
                 `
+        
         const deleteItemBtn = document.createElement('div')
         deleteItemBtn.classList.add('delete-item-btn')
         deleteItemBtn.setAttribute('tabindex', `0`)
-        deleteItemBtn.setAttribute('anchor', `itemTable${itemTables.length}`)
+        deleteItemBtn.setAttribute('anchor', `itemTable${itemTablesArr.length}`)
         deleteItemBtn.innerHTML = `
                 <span>x</span>
         `
