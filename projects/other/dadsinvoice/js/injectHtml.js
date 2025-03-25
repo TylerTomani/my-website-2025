@@ -1,6 +1,6 @@
 import { mainTargetDiv } from "./letterfocus-index.js";
 import { letterFocusInvoice } from "./letterFocus-invoice.js";
-import { addItem } from "./addItem.js";
+import { addItem } from "./addDelete.js";
 function fetchHtmlData(href) {
     fetch(href)
         .then(response => {

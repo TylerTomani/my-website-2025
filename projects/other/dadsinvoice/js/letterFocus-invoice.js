@@ -87,8 +87,12 @@ export function letterFocusInvoice(){
             unitPrice.focus()
         }
         if (letter == 'x') {
-            const deleteItemBtn = document.querySelector('.deleteItemBtn')
-            deleteItemBtn.focus()
+            const deleteItemBtn = document.querySelector('.delete-item-btn')
+            if (deleteItemBtn) {
+                deleteItemBtn.classList.add('active')
+                // console.log(e.tar)
+                deleteItemBtn.focus()
+            }
         }
         if (letter == 'n') {
             newItemBtn.focus()

@@ -96,6 +96,10 @@ export function addItem(){
         itemsContainer.appendChild(itemTable)
     }
     
+    /* 
+    This is preventing zoom from occuring on mobile when selecting textareas or inputs in 
+        the item Table. I don't understand why, got it from gpt
+    */
     const viewport = document.querySelector("meta[name=viewport]");
     document.addEventListener("focusin", () => {
         viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1");
