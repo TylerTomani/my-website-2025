@@ -219,7 +219,7 @@ Mike Tomani 585-203-6767</textarea>
             <!-- 'New Line' is below ????? weird reason  -->
         </div>
         <div class="items-container">
-            <div class="item-table">
+            <div tabindex="0" class="item-table" id="itemTable0">
                 <div class="item">
                     <h4>Item</h4>
                     <select name="item[]" id="itemSelect0" class="inputInvoiceDataItem ">
@@ -255,8 +255,11 @@ Mike Tomani 585-203-6767</textarea>
                 </div>
                 <div class="item-total">
                     <h4>total</h4>
-                    <input name="total[]" id="total0" type="text" autocomplete="nope" readonly="" class="inputInvoiceDataAmount"
+                    <input name="total[]" id="total0" type="text" autocomplete="nope" readonly="" 
                         value="0.00">
+                </div>
+                <div tabindex="0" anchor="itemTable0" class="delete-item-btn ">
+                    <span>x</span>
                 </div>
             </div>
             <!-- onclick="newLineClick()" -->

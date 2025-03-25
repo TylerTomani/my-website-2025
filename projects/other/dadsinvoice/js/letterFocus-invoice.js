@@ -12,9 +12,24 @@ export function letterFocusInvoice(){
     const itemsContainer = document.querySelector('#items-container')
     const invoiceNotes = document.querySelector('#invoice_notes')
     const textAreaInputs = document.querySelectorAll('textarea')
-    newItemBtn = document.querySelector('#newItemBtn')    
-        
     
+    const itemsTables = document.querySelectorAll('.item-table')
+    itemsTables.forEach(el => {
+        el.addEventListener('focusin', e => {
+            const deleteItemBtn = e.target.querySelector('.delete-item-btn')
+            if(deleteItemBtn){
+                deleteItemBtn.classList.add('active')
+            }
+        })
+        el.addEventListener('focusout', e => {
+            const deleteItemBtn = e.target.querySelector('.delete-item-btn')
+            if(deleteItemBtn){
+                deleteItemBtn.classList.remove('active')
+            }
+        })
+    })
+    newItemBtn = document.querySelector('#newItemBtn')    
+        // This is the original code
     function field_onfocus(element, placeholderText) {
         if (element.value.trim() === '') {
             element.value = placeholderText;
@@ -51,20 +66,33 @@ export function letterFocusInvoice(){
         if (!textInputFocused) {
         }
         if (isShift) {
-
         }
         // Just for now
-        if(letter == 'i'){
-            const dataTableItem = document.querySelector('#itemSelect0')
-            dataTableItem.focus()
-            
-        }
-        if(letter == 'n'){
-            newItemBtn.focus()
-        }
-        
+        tempLetterFocus(e,letter)
         
     });
-    
+    function tempLetterFocus(e,letter){
+        if (letter == 'i') {
+            // const dataTableItem = document.querySelector('#itemSelect0')
+            const itemTable = document.querySelector('.item-table')
+            itemTable.focus()
+        }
+        if (letter == 't') {
+            const itemTotal = document.querySelector('.item-total input')
+            itemTotal.focus()
+        }
+        if (letter == 'u') {
+            const unitPrice = document.querySelector('.unit-price input')
+            e.preventDefault()
+            unitPrice.focus()
+        }
+        if (letter == 'x') {
+            const deleteItemBtn = document.querySelector('.deleteItemBtn')
+            deleteItemBtn.focus()
+        }
+        if (letter == 'n') {
+            newItemBtn.focus()
+        }
+    }    
 }
 
