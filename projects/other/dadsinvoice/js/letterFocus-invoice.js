@@ -64,11 +64,12 @@ export function letterFocusInvoice(){
         let isShift = e.shiftKey
         let letter = e.key.toLowerCase()
         if (!textInputFocused) {
+            tempLetterFocus(e, letter)
         }
         if (isShift) {
         }
         // Just for now
-        tempLetterFocus(e,letter)
+        
         
     });
     function tempLetterFocus(e,letter){
