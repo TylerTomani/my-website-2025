@@ -3,7 +3,7 @@
     padding:0;
 }
 main {
-    margin: 0 3%;
+    
     overflow-x: hidden;
 
 
@@ -96,7 +96,7 @@ font-family: verdana;
     width: 100%;
 }
 #invoice_num_container > * {
-    flex-basis: 33%;
+    flex-basis: 32%;
     /* width: 33%; */
     display: flex;
     flex-direction: column;
@@ -144,12 +144,14 @@ font-family: verdana;
     align-items: flex-start;
 }
 .item-table > .item {
-    flex-basis: 12.5%;   
-    padding: .5% 1%
+    /* flex-basis: 12.5%;    */
+    /* padding: .5% 1% */
 }
 .item-table > .description {
-    flex-basis: 55%;
+    /* flex-basis: 50%; */
     flex-grow: 1;
+
+    field-sizing: content;
 }
 .item-table > .description textarea{
     height: 25px;

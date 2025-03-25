@@ -14,9 +14,11 @@ body>header {
     height: 5vh;    
 }
 main {
-    display: flex;
-    flex-direction: column;
     position: relative;
+    display: flex;
+    overflow: hidden;
+    margin: 0 1%;
+    flex-direction: column;
 }
 #mainTargetDiv{
     border: 1px solid black;

@@ -1,7 +1,7 @@
 import { newItemBtn } from "./letterFocus-invoice.js";
 
 
-export function addItem(){
+export function addDeleteItem(){
     const itemsContainer = document.querySelector('.items-container')
     let itemFocused = false
     let itemTables = document.querySelectorAll('.item-table')
@@ -41,6 +41,8 @@ export function addItem(){
     function createItem(itemTables){
         const itemTable = document.createElement('div')
         itemTable.classList.add('item-table')
+        itemTable.setAttribute('tabindex','0')
+        itemTable.id = `itemTable${itemTables.length - 1}`
         const item = document.createElement('div')
         item.classList.add('item')
         itemTable.appendChild(item)
@@ -92,6 +94,16 @@ export function addItem(){
                     <input name="total[]" id="total${itemTable.length}" type="text" autocomplete="nope" readonly="" class="inputInvoiceDataAmount"
                         value="0.00">
                 `
+        
+        const deleteItemBtn = document.createElement('div')
+        deleteItemBtn.classList.add('delete-item-btn')
+        deleteItemBtn.setAttribute('tabindex', `0`)
+        deleteItemBtn.setAttribute('anchor', `itemTable${itemTables.length}`)
+        deleteItemBtn.innerHTML = `
+                <span>x</span>
+        `
+
+        itemTable.appendChild(deleteItemBtn)
         itemTable.appendChild(itemTotal)
         itemsContainer.appendChild(itemTable)
     }
