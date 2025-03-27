@@ -29,7 +29,9 @@
         itemTables.forEach(el => {
             el.addEventListener('focusin', e => {
                 const deleteItemBtn = e.target.querySelector('.delete-item-btn')
-                if(deleteItemBtn){
+                console.log(itemTables[[...itemTables].indexOf(e.target)])
+                
+                if (deleteItemBtn && !deleteItemBtn.classList.contains('active') ){
                     deleteItemBtn.classList.add('active')
                 }
             })
@@ -38,6 +40,12 @@
                 if(deleteItemBtn){
                     deleteItemBtn.classList.remove('active')
                 }
+            })
+            el.addEventListener('keydown', e =>{
+                console.log('keydown')
+            })
+            el.addEventListener('mousedown', e =>{
+                console.log('keydown')
             })
         })
         newItemBtn = document.querySelector('#newItemBtn')    
@@ -65,7 +73,7 @@
             // }
             el.addEventListener('focusin', e => {
                 textInputFocused = true
-                console.log('focus')
+                console.log('textarea input: focus')
             })
             el.addEventListener('focusout', e => {
                 textInputFocused = false

@@ -19,17 +19,17 @@ export function addDeleteItem(){
     
     newItemBtn.addEventListener('mousedown', e => {
         e.preventDefault()
-        updateItemTables()
         createItem(itemTables)        
+        updateItemTables()
     })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
         itemTables = updateItemTables()
         if (!isNaN(letter)) {
-            console.log(itemTables)
+            // console.log(itemTables)
             const intLet = parseInt(letter)
             if(intLet <= itemTables.length){
-                console.log(intLet - 1)
+                // console.log(intLet - 1)
                 const itemTable = itemTables[intLet - 1]
                 // const itemSelectBox = itemTable.querySelector('.item select')
                 itemTable.focus()

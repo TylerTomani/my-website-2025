@@ -119,13 +119,16 @@ font-family: verdana;
 .item-table{
     position: relative;;
     margin-top: 2.5%;
-    /* border: 1px solid blue; */
-    padding:  .5%;
+    padding: 2% .5%;
+    padding-top: 4%;
+    padding-left: 1%;
     display: flex;
     /* flex-wrap: wrap; */
     gap: 1%;
-    
+    border-radius: 4px;
+    border: 1px solid black;
 }
+.item-table:active,.item-table:focus
 .item-table .delete-item-btn{
     display: none;
 }
