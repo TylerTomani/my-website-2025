@@ -1,7 +1,10 @@
     // import { invoicePage } from "./letterfocus-index.js"
     export let textInputFocused = false
-    export let newItemBtn = document.querySelector('#newItemBtn')    
+
     import { updateItemTables } from "./addDeleteItem.js"
+    let itemTables
+
+
     export function letterFocusInvoice(){
         const toName = document.querySelector('#to_name')
         const toNewCustomer = document.querySelector('#to_new_customer')
@@ -12,9 +15,10 @@
         const itemsContainer = document.querySelector('#items-container')
         const invoiceNotes = document.querySelector('#invoice_notes')
         const textAreaInputs = document.querySelectorAll('textarea')
+        const newItemBtn = document.querySelector('#newItemBtn')    
+
         
         
-        let itemTables = updateItemTables()
         addEventListener('keydown', e => {
             let isShift = e.shiftKey
             let letter = e.key.toLowerCase()
@@ -23,32 +27,39 @@
             }
             if (isShift) {
             }
-            itemTables =  updateItemTables()
+            // itemTables =  updateItemTables()
             // Just for now
         });
-        itemTables.forEach(el => {
-            el.addEventListener('focusin', e => {
-                const deleteItemBtn = e.target.querySelector('.delete-item-btn')
-                console.log(itemTables[[...itemTables].indexOf(e.target)])
-                
-                if (deleteItemBtn && !deleteItemBtn.classList.contains('active') ){
-                    deleteItemBtn.classList.add('active')
-                }
-            })
-            el.addEventListener('focusout', e => {
-                const deleteItemBtn = e.target.querySelector('.delete-item-btn')
-                if(deleteItemBtn){
-                    deleteItemBtn.classList.remove('active')
-                }
-            })
-            el.addEventListener('keydown', e =>{
-                console.log('keydown')
-            })
-            el.addEventListener('mousedown', e =>{
-                console.log('keydown')
-            })
+        newItemBtn.addEventListener('keydown', e => {
+            setTimeout(() => {
+                itemTables = updateItemTables()
+                console.log(itemTables)
+                handleItemTables(itemTables)
+            },59)
         })
-        newItemBtn = document.querySelector('#newItemBtn')    
+        function handleItemTables(itemTables){
+            itemTables.forEach(el => {
+                el.addEventListener('focusin', e => {
+                    const deleteItemBtn = e.target.querySelector('.delete-item-btn')
+                    // console.log(itemTables[[...itemTables].indexOf(e.target)])
+                    
+                    if (deleteItemBtn && !deleteItemBtn.classList.contains('active') ){
+                        deleteItemBtn.classList.add('active')
+                    }
+                })
+                el.addEventListener('focusout', e => {
+                    const deleteItemBtn = e.target.querySelector('.delete-item-btn')
+                    if (deleteItemBtn && deleteItemBtn.classList.contains('active')){
+                        deleteItemBtn.classList.remove('active')
+                    }
+                })
+                
+            })
+        }
+        itemTables = updateItemTables()
+        handleItemTables(itemTables)
+        
+        
             // This is the original code
         function field_onfocus(element, placeholderText) {
             if (element.value.trim() === '') {
@@ -102,4 +113,5 @@
             }
         }    
     }
+    
 

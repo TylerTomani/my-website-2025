@@ -1,4 +1,5 @@
-import { newItemBtn } from "./letterFocus-invoice.js";
+// import { newItemBtn } from "./letterFocus-invoice.js";
+
 export function updateItemTables() {
     const itemTables = document.querySelectorAll('.item-table')
     return itemTables
@@ -6,30 +7,29 @@ export function updateItemTables() {
 export function addDeleteItem(){
     let itemTables 
     const itemsContainer = document.querySelector('.items-container')
+    const newItemBtn = document.querySelector('#newItemBtn')    
     
     newItemBtn.addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
         if(letter == 'enter'){
             itemTables = updateItemTables()
             e.preventDefault()
-            updateItemTables()
+            // updateItemTables()
             createItem(itemTables)        
         }
     })
     
     newItemBtn.addEventListener('mousedown', e => {
         e.preventDefault()
-        createItem(itemTables)        
         updateItemTables()
+        createItem(itemTables)        
     })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
         itemTables = updateItemTables()
         if (!isNaN(letter)) {
-            // console.log(itemTables)
             const intLet = parseInt(letter)
             if(intLet <= itemTables.length){
-                // console.log(intLet - 1)
                 const itemTable = itemTables[intLet - 1]
                 // const itemSelectBox = itemTable.querySelector('.item select')
                 itemTable.focus()
@@ -90,6 +90,7 @@ export function addDeleteItem(){
                 `
         const deleteItemBtn = document.createElement('div')
         deleteItemBtn.classList.add('delete-item-btn')
+        // deleteItemBtn.classList.add('active')
         deleteItemBtn.setAttribute('tabindex', `0`)
         deleteItemBtn.setAttribute('anchor', `itemTable${itemTables.length}`)
         deleteItemBtn.innerHTML = `
