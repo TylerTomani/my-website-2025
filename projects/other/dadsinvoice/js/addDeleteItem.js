@@ -24,6 +24,11 @@ export function addDeleteItem(){
         updateItemTables()
         createItem(itemTables)        
     })
+    // newItemBtn.addEventListener('click', e => {
+    //     e.preventDefault()
+    //     createItem(itemTables)        
+    //     updateItemTables()
+    // })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
         itemTables = updateItemTables()

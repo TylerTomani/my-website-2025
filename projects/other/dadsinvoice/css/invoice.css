@@ -126,9 +126,12 @@ font-family: verdana;
     /* flex-wrap: wrap; */
     gap: 1%;
     border-radius: 4px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
-/* .item-table:active,.item-table:focus */
+.item-table:focus,.item-table:active,
+.item-table:hover{
+    border: 2px solid orange;
+}
 
 .item-table .delete-item-btn{
     display: none;
