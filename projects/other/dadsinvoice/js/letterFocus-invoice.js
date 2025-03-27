@@ -41,6 +41,7 @@
             itemTables.forEach(el => {
                 el.addEventListener('focusin', e => {
                     const deleteItemBtn = e.target.querySelector('.delete-item-btn')
+                    el.style.border = '2px solid orange'
                     if (deleteItemBtn && !deleteItemBtn.classList.contains('active') ){
                         deleteItemBtn.classList.add('active')
                     }
