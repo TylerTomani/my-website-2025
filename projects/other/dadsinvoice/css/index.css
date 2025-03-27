@@ -13,13 +13,7 @@ body>header {
     justify-content: space-around;
     height: 5vh;    
 }
-main {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    margin: 0 1%;
-    flex-direction: column;
-}
+
 #mainTargetDiv{
     border: 1px solid black;
     height: 85vh;    

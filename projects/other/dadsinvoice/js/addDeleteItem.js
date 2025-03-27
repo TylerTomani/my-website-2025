@@ -12,6 +12,7 @@ export function addDeleteItem(){
         if(letter == 'enter'){
             itemTables = updateItemTables()
             e.preventDefault()
+            updateItemTables()
             createItem(itemTables)        
         }
     })

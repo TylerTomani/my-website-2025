@@ -3,10 +3,15 @@
     padding:0;
 }
 main {
-    
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+    flex-direction: column;
     overflow-x: hidden;
-
-
+}
+.items-container {
+    padding: 0 .5%;
 }
 #invoiceHeading{
     display: flex;
@@ -14,6 +19,7 @@ main {
 }
 #invoice-container{
     width: 100%;
+    
     border: 2px solid red;
 }
 select {
@@ -113,7 +119,8 @@ font-family: verdana;
 .item-table{
     position: relative;;
     margin-top: 2.5%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+    padding:  .5%;
     display: flex;
     /* flex-wrap: wrap; */
     gap: 1%;
