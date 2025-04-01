@@ -5,6 +5,10 @@ export function letterFocus() {
     const questionAnswers = document.querySelectorAll('.question-answer')
     let questionAnswersFocused = false
     const allAnswerH3s = document.querySelectorAll('.answer-txt h3')
+    /* This is not well defined in html, since questions are really in question-answer, 
+    drop-topics are the topics within inject page, which is topics from the side menu named 
+    .dropTopics in index.js */
+    const dropTopics = document.querySelectorAll('.drop-topics')
 
     addEventListener('keydown', (e) => {
         const allFocusEls = document.querySelectorAll('[id]');
@@ -77,11 +81,13 @@ function questionNumFocus(e,letter){
         const h3s = answerTxt.querySelectorAll('h3')
         if(intLet > h3s.length){
             return
+        } else {
+
+            h3s.forEach(h3 => {
+                h3.setAttribute('tabindex',0)
+            })
+            h3s[intLet - 1].focus()
         }
-        h3s.forEach(h3 => {
-            h3.setAttribute('tabindex',0)
-        })
-        h3s[intLet - 1].focus()
 
     }
 }
