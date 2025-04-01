@@ -31,7 +31,7 @@
     'ui-sans-serif','-apple-system','system-ui','Segoe UI',
     'Helvetica','Arial','sans-serif';       
 }
-.question-txt > h5{
+.question-txt > h6{
     color: white;
 }
 .question-answer >.question-txt{
