@@ -86,13 +86,13 @@ header article p {
         word-wrap: wrap;
     }
     body {
-        position: relative;
+        /* position: relative; */
     }
     .question-answer{
-        float: right;
+        /* float: right;
         position: absolute;
         top: 0;
-        background-color: white;
+        background-color: white; */
     }
     
     
