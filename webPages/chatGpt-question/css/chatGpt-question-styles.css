@@ -41,21 +41,21 @@ header article p {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;    
-    /* background-color: yellow; */
     font-family: 
     'ui-sans-serif','-apple-system','system-ui','Segoe UI',
     'Helvetica','Arial','sans-serif';       
+    margin: 2% 0;;
 }
-.question-txt > h6{
-    color: white;
+.question-txt > h5{
+    /* color: white; */
+    margin-bottom: 2%;
 }
 .question-answer >.question-txt{
     color: black;
     border-radius: 10px;
-    margin-bottom: 1%;
+    /* margin: 0% 5%; */
     padding: 1%;   
-    margin-left: 30%;
+    /* margin-left: 30%; */
     
 }
 /* .question-txt > .text-base > .whitespace-pre-wrap {
