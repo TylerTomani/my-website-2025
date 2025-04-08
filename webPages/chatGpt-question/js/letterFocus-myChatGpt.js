@@ -58,11 +58,9 @@ export function letterFocus() {
     questionAnswers.forEach(el => {
         el.addEventListener('focusin', e => {
             questionAnswersFocused = true
-            console.log('in')
         })
         el.addEventListener('focus', e => {
             questionAnswersFocused = true
-            console.log('focus')
         })
         el.addEventListener('focusout', e => {
             questionAnswersFocused = false

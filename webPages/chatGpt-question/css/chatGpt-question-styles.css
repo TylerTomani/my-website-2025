@@ -1,5 +1,29 @@
+.question-answer {
+    margin: 0 2.5%;
+    color: black;
+}
+.question-txt .text-base .code-container {
+    background-color: whitesmoke;
+    color: black;
+}
+.answer-txt .text-base .code-container {
+    border: 1px solid whitesmoke;
+
+}
+.question-txt > .text-base .copy-code,
+.question-txt > .text-base .copy-code:nth-child(odd) {
+    background-color: white;
+    white-space: normal;
+    width: fit-content;
+    padding: 1.2% 2%;
+    white-space: wrap;
+    max-height: 200px;
+    line-height: 1.4;
+    margin-right: 5%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
 header article {
-    /* border: 2px solid blue; */
     padding: 1% 2%
 }
 header article p {
@@ -28,9 +52,6 @@ header article p {
     margin-bottom: 1%;
 }
 .question-answer{
-    color: black;
-}
-.question-answer{
     color: white;
     display: flex;
     flex-direction: column;
@@ -51,7 +72,7 @@ header article p {
     margin-left: 30%;
     
 }
-.question-txt > .text-base > .whitespace-pre-wrap {
+/* .question-txt > .text-base > .whitespace-pre-wrap {
     background-color: whitesmoke;
     border: 1px solid lavender;
     line-height: 1.33;
@@ -59,17 +80,9 @@ header article p {
     font-weight: 550;
     font-size: 95%;
     width: 100%;
-}
+} */
 
-.question-txt >.text-base>.whitespace-pre-wrap> .copy-code {
-    white-space: normal;
-    width: 100%;
-    padding: 1% 2%;
-    /* text-wrap: wrap; */
-    white-space: wrap;
-    max-height: 200px;
-    overflow-y: scroll;
-}
+
 .hide {
     display: none;
 }
@@ -88,12 +101,12 @@ header article p {
     body {
         /* position: relative; */
     }
-    .question-answer{
-        /* float: right;
-        position: absolute;
-        top: 0;
-        background-color: white; */
-    }
-    
-    
+    .question-txt > .text-base .copy-code,
+    .question-txt > .text-base .copy-code:nth-child(odd) {
+        margin-right: 2.5%;
+    }   
+    .question-txt > .text-base .copy-code,
+    .question-txt > .text-base .copy-code:nth-child(even) {
+        margin-left: 5%;
+    }   
 }
