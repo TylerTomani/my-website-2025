@@ -96,24 +96,24 @@ abore dolores! -->
                     <div class="code-container">
                         <pre tabindex="0" class="copy-code">
 {
-"manifest_version": 3,
-"name": "Google Search Letter Focus",
-"version": "1.0",
-"description": "Navigate Google search results using the first letter keys.",
-"permissions": ["scripting", "activeTab"],
-"host_permissions": ["https://www.google.com/*"],
-"background": {
-"service_worker": "background.js"
-},
-"content_scripts": [
-{
-"matches": ["https://www.google.com/*"],
-"js": ["content.js"]
-}
-],
-"action": {
-"default_popup": "popup.html"
-}
+  "manifest_version": 3,
+  "name": "Google Search Letter Focus",
+  "version": "1.0",
+  "description": "Navigate Google search results using the first letter keys.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://www.google.com/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [
+      {
+          "matches": ["https://www.google.com/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }</pre>
                     </div>
                     <h3>2. Create the Content Script (content.js)</h3>
@@ -217,10 +217,10 @@ console.log("Google Search Letter Focus Extension Installed");
             </article>
         </div>
 
-    <!-- Chatgpt question answer -->
+    <!-- questionTxts[1] -->
         <div class="question-answer">
             <article class="text-token-text-primary question-txt">
-                <h5 class="sr-only r">I lost don't know where the original question is in chatgpt</h5>
+                <h5 class="sr-only r">Second Question questionTxt[1]</h5>
                 <div class="text-base">
                     <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
                                                     it to a pre so i can copy it  -->
@@ -247,8 +247,8 @@ abore dolores! -->
                     </div>
                 </div>
             </article>
-            <!-- <article class="text-token-text-primary answer-txt show"> -->
-            <article class="text-token-text-primary answer-txt ">
+            <article class="text-token-text-primary answer-txt show">
+            <!-- <article class="text-token-text-primary answer-txt "> -->
                 <h6 class="sr-only">Chat Gpt Said: </h6>
                 <div class="text-base">
                     <!-- .markdown .prose is 5th inner child of the 2nd child element 
@@ -383,197 +383,18 @@ console.log("Google Search Letter Focus Extension Installed");
                 </div>
             </article>
         </div>
-    <!-- Chatgpt question answer -->
+    <!-- questionTxts[2] -->
         <div class="question-answer">
             <article class="text-token-text-primary question-txt">
-                <h5 class="sr-only r">I lost don't know where the original question is in chatgpt</h5>
+                <h5 class="sr-only r">Second Question questionTxt[2]</h5>
                 <div class="text-base">
                     <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
                                                     it to a pre so i can copy it  -->
                     <div class="whitespace-pre-wrap">
-                        <pre tabindex="0" id="top" class="copy-code drop-question">i'm trying make an extension to add to chrome that will apply my letter focus scripts, above are the html
-
-want to target, the divs with a role="heading" are the main search results on googles, the a tage with the
-data-agch="HJ3bqe" are the heading sub results, i would love to target both so that if i press the first letter in one
-of the results the focus goes to the result, as you can see the first div with role "heading" and the span inside
-containing the text Stack Overflow... is the first result in the google search result , if i press the "S" I would love
-the focus to go there then if i press "k", it will then go to Knowing Sharing Platform, if press "r" the focus will go
-to Rest New..., basically everytime i press a letter on the keyboard the focus will go to the first element with the
-text that has that first letter, then if the same letter is pressed again it will go to the next element containing that
-letter as its first character, but, if shift and that letter is pressed it will go to the previous element and cycle
-through the page, for example if the page first opens and shift + "s" is pressed it shouldn't go to Stack Overflow... it
-should go to the bottom of the page to the last element with that letter, and continue decending through the elements up
-if shift + that letter is pressed, how can i write a script for this and make it an extension for chrome
-
-<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis libero accusamus voluptatum architecto iure 
+                        <pre tabindex="0" id="top" class="copy-code drop-question">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis libero accusamus voluptatum architecto iure 
 rem consequuntur ipsa labore reprehenderit. Quis eligendi inventore ea deserunt eveniet magni laudantium cum l
-abore dolores! -->
-
-</pre>
-                    </div>
-                </div>
-            </article>
-            <!-- <article class="text-token-text-primary answer-txt show"> -->
-            <article class="text-token-text-primary answer-txt ">
-                <h6 class="sr-only">Chat Gpt Said: </h6>
-                <div class="text-base">
-                    <!-- .markdown .prose is 5th inner child of the 2nd child element 
-                                                                '.group/conversation-turn' of .text-base   -->
-                    <p>
-                        To implement this Chrome extension, follow these steps:
-                    </p>
-                    <h3>1. Create the Manifest File (manifest.json)</h3>
-                    <p>
-                        This defines the extension's permissions and scripts.
-                    </p>
-                    <div class="code-container">
-                        <pre tabindex="0" class="copy-code">
-{
-"manifest_version": 3,
-"name": "Google Search Letter Focus",
-"version": "1.0",
-"description": "Navigate Google search results using the first letter keys.",
-"permissions": ["scripting", "activeTab"],
-"host_permissions": ["https://www.google.com/*"],
-"background": {
-"service_worker": "background.js"
-},
-"content_scripts": [
-{
-"matches": ["https://www.google.com/*"],
-"js": ["content.js"]
-}
-],
-"action": {
-"default_popup": "popup.html"
-}
-}</pre>
-                    </div>
-                    <h3>2. Create the Content Script (content.js)</h3>
-                    <p>
-                        This script will handle key presses and focus the relevant search results.
-                    </p>
-                        <pre tabindex="0" class="copy-code">
-html, body {
-height: 100%;
-margin: 0;
-}
-
-.container {
-<span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
-display: flex; /* Optional: for centering content */
-align-items: center;
-justify-content: center;
-}        
-</pre>
-                    <h3>2. JavaScript Approach (Handles Dynamic Changes)</h3>
-                    <p>If the element’s height needs to dynamically adjust when the window resizes:</p>
-                    <div class="code-container">
-                        <pre tabindex="0" class="copy-code">
-let searchResults = [];
-let currentIndexes = {};
-
-document.addEventListener("keydown", (event) => {
-if (event.metaKey || event.ctrlKey || event.altKey) return;
-
-let isShift = event.shiftKey;
-let key = event.key.toLowerCase();
-if (key.length !== 1 || !/[a-z]/.test(key)) return;
-
-// Get search result elements if not already fetched
-if (searchResults.length === 0) {
-searchResults = [...document.querySelectorAll('div[role="heading"] span, a[data-agch="HJ3bqe"]')];
-}
-
-let matchingResults = searchResults.filter(el => 
-el.innerText.trim().toLowerCase().startsWith(key)
-);
-
-if (matchingResults.length === 0) return;
-
-// Initialize tracking index if not set
-if (!(key in currentIndexes)) {
-currentIndexes[key] = isShift ? matchingResults.length - 1 : 0;
-} else {
-currentIndexes[key] += isShift ? -1 : 1;
-}
-
-// Cycle through matches
-if (currentIndexes[key] >= matchingResults.length) currentIndexes[key] = 0;
-if (currentIndexes[key] &lt; 0) currentIndexes[key] = matchingResults.length - 1;
-
-let target = matchingResults[currentIndexes[key]];
-target.scrollIntoView({ behavior: "smooth", block: "center" });
-target.focus();
-});</pre>
-                    </div>
-                    <h3>3. Add a Background Script (background.js)</h3>
-                    <p>This ensures the content script runs when needed.</p>
-                    <div class="code-container">
-                        <pre tabindex="0" class="copy-code">
-chrome.runtime.onInstalled.addListener(() => {
-console.log("Google Search Letter Focus Extension Installed");
-});</pre>
-                    </div>
-                    <h3>4. Create a Popup (Optional)</h3>
-                    <p>Create popup.html for an options menu.</p>
-                    <div class="code-container">
-                        <pre tabindex="0" class="copy-code">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-&lt;title>Google Search Letter Focus&lt;/title>
-&lt;/head>
-&lt;body>
-&lt;h2>Letter Navigation Active&lt;/h2>
-&lt;p>Use letter keys to navigate search results.&lt;/p>
-&lt;/body>
-&lt;/html>
-                            </pre>
-                    </div>
-                    <h3>5. Load the Extension into Chrome</h3>
-                    <p>Open</p>
-                    <div class="code-container">
-                        <pre tabindex="0" class="copy-code">chrome://extensions/</pre>
-                    </div>
-                    <p>
-                        in Chrome.
-                    </p>
-                    <p>
-                        Enable Developer Mode (top-right toggle).
-                        Click Load Unpacked and select your extension folder.
-                        This script will let you cycle through search results using letters. Let me know if you need refinements! 🚀
-
-                    </p>
-                    
-                </div>
-            </article>
-        </div>
-    <!-- Chatgpt question answer -->
-        <div class="question-answer">
-            <article class="text-token-text-primary question-txt">
-                <h5 class="sr-only r">I lost don't know where the original question is in chatgpt</h5>
-                <div class="text-base">
-                    <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
-                                                    it to a pre so i can copy it  -->
-                    <div class="whitespace-pre-wrap">
-                        <pre tabindex="0" id="top" class="copy-code drop-question">i'm trying make an extension to add to chrome that will apply my letter focus scripts, above are the html
-
-want to target, the divs with a role="heading" are the main search results on googles, the a tage with the
-data-agch="HJ3bqe" are the heading sub results, i would love to target both so that if i press the first letter in one
-of the results the focus goes to the result, as you can see the first div with role "heading" and the span inside
-containing the text Stack Overflow... is the first result in the google search result , if i press the "S" I would love
-the focus to go there then if i press "k", it will then go to Knowing Sharing Platform, if press "r" the focus will go
-to Rest New..., basically everytime i press a letter on the keyboard the focus will go to the first element with the
-text that has that first letter, then if the same letter is pressed again it will go to the next element containing that
-letter as its first character, but, if shift and that letter is pressed it will go to the previous element and cycle
-through the page, for example if the page first opens and shift + "s" is pressed it shouldn't go to Stack Overflow... it
-should go to the bottom of the page to the last element with that letter, and continue decending through the elements up
-if shift + that letter is pressed, how can i write a script for this and make it an extension for chrome
-
-<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis libero accusamus voluptatum architecto iure 
-rem consequuntur ipsa labore reprehenderit. Quis eligendi inventore ea deserunt eveniet magni laudantium cum l
-abore dolores! -->
+abore dolores!
 
 </pre>
                     </div>

@@ -1,7 +1,31 @@
+header article {
+    padding: 1% 2%
+}
 
+header article p {
+    /* border: 2px solid blue;  */
+    margin-top: 8px;
+    line-height: .98;
+    font-size: 1.1rem;
+}
 .question-answer {
     margin: 0 2.5%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 
+    'ui-sans-serif','-apple-system','system-ui','Segoe UI',
+    'Helvetica','Arial','sans-serif';       
+    margin: 2% 0;;
+}
+.question-txt>h5 {
+    /* color: white; */
+    margin-bottom: 2%;
+}
+.question-answer>.question-txt {
     color: black;
+    border-radius: 10px;
+    padding: 1%;
 }
 .question-txt .text-base .code-container {
     background-color: whitesmoke;
@@ -23,52 +47,14 @@
     overflow: hidden;
     overflow-y: scroll;
 }
-header article {
-    padding: 1% 2%
-}
-header article p {
-    /* border: 2px solid blue;  */
-    margin-top: 8px;
-    line-height: .98;
-    font-size: 1.1rem;
-}
-.topics-questions {
-    margin: 0 1.5%;
-}
-/* .dropQuestion */
 
-.question-answer{
-    color: white;
-    display: flex;
-    flex-direction: column;
-    font-family: 
-    'ui-sans-serif','-apple-system','system-ui','Segoe UI',
-    'Helvetica','Arial','sans-serif';       
-    margin: 2% 0;;
+.answer-txt {
+    margin: 0 2.5%;
 }
-.question-txt > h5{
-    /* color: white; */
-    margin-bottom: 2%;
+.answer-txt .code-container > pre.copy-code{
+    padding: 1% 1.5%;
+    padding-top: 1.5%;
 }
-.question-answer >.question-txt{
-    color: black;
-    border-radius: 10px;
-    /* margin: 0% 5%; */
-    padding: 1%;   
-    /* margin-left: 30%; */
-    
-}
-/* .question-txt > .text-base > .whitespace-pre-wrap {
-    background-color: whitesmoke;
-    border: 1px solid lavender;
-    line-height: 1.33;
-    font-style: bold;
-    font-weight: 550;
-    font-size: 95%;
-    width: 100%;
-} */
-
-
 .hide {
     display: none;
 }
