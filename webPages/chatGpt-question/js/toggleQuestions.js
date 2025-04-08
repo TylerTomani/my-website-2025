@@ -1,6 +1,6 @@
 
 export function handleQuestions(){
-    const dropQuestions = document.querySelectorAll('.dropQuestion')
+    const dropQuestions = document.querySelectorAll('.dropQuestion, .drop-question')
     const questionAnswers = document.querySelectorAll('.question-answer')
     const answersTxt = document.querySelectorAll('.answer-txt')
     function hideQuestionAnswers() {
@@ -11,7 +11,9 @@ export function handleQuestions(){
     // hideQuestionAnswers()
     function hideAnswers() {
         answersTxt.forEach((el => {
-            el.classList.add('hide')
+            if(!el.classList.contains('show')){
+                el.classList.add('hide')
+            }
         }))
     }
     hideAnswers()

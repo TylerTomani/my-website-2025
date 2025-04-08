@@ -7,51 +7,56 @@
     <link rel="stylesheet" href="../../css/single-header.css">
     <link rel="stylesheet" href="../../webPages/chatGpt-question/css/colors-myChatgpt.css">
     <link rel="stylesheet" href="../../webPages/chatGpt-question/css/copy-code.css">
-    <link rel="stylesheet" href="../../webPages/chatGpt-question/css/topic-questions.css">
+    <link rel="stylesheet" href="../../webPages/chatGpt-question/css/chatGpt-question-styles.css">
     <link rel="stylesheet" href="../../css/darkMode.css">
-    <!-- <script type="module" src="../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script> -->
-    <!-- <script type="module" src="../../chatGpt-question/js/letterFocus-myChatGpt.js" defer></script> -->
+    
+    <script type="module" src="../../webPages/chatGpt-question/js/dropTopic.js" defer></script>
+    <script type="module" src="js/letterFocus-chatAnswer.js" defer></script>
     <script type="module" src="../../js/copy-code.js" defer></script>
 </head>
 <body class="darkMode">
     <header>
         <a id="homelink" href="../../index.html">home</a>
         <h1>Google Result - Letter Focus</h1>
-        <h3></h3>
     </header>
     <main>
-        <article>
-            <p>
-                watch tutorail on <code>filter()</code> and <code>trim()</code>
-            </p>
-            <p>
-                REMEMBER Python - stackoverflow api - corey is the best format, apply that format 
-                to my chatgpt questions and add this question and answer to that page 
-                with that format got it good go
-            </p>
-            <p>
-                Put the answer to this but just add it to the chatgpt-questions, (see <a id="chatgptQuestion" href="../chatGpt-question/index.html
-                        ">chatgpt-question project</a> )
-            </p>
-            <p>
-                This project is saved in my <code>ChromeExtensions</code> folder
-            </p>
-            <p>
-                type
-            </p>
-            <div class="code-container">
-                <pre tabindex="0" class="copy-code">chrome://extensions/</pre>
-            </div>
-        </article>
-        <!-- Chatgpt question nanswer -->
+        <h3 style="color:tomato !important"> press 'M' to go to 1st question</h3>
+        <h3 style="color:tomato !important">adjust script accordinly to allow 'M' to go through multiple question </h3>
+
+        <header>
+            <article>
+                <strong>
+                    watch tutorial on <code>filter()</code> and <code>trim()</code>
+                </strong>
+                <p>
+                    <strong>REMEMBER</strong> Python - stackoverflow api - corey is the best format, apply that format
+                    to my chatgpt questions and add this question and answer to that page
+                    with that format got it good go
+                </p>
+                <p>
+                    Put the answer to this but just add it to the chatgpt-questions, (see <a id="chatgptQuestion" href="../../webPages/chatGpt-question/index.html
+                                    ">chatgpt-question project</a> )
+                </p>
+                <p>
+                    This project is saved in my <code>ChromeExtensions</code> folder
+                </p>
+                <p>
+                    type
+                </p>
+                <div class="code-container">
+                    <pre tabindex="0" class="copy-code">chrome://extensions/</pre>
+                </div>
+            </article>
+        </header>
+        <!-- Chatgpt question answer -->
             <div class="question-answer">
                 <article class="text-token-text-primary question-txt">
-                    <h5 class="sr-only r">I lost/ don't know where the original question is in chatgpt</h5>
+                    <h5 class="sr-only r">I lost don't know where the original question is in chatgpt</h5>
                     <div class="text-base">
                         <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
                                                      it to a pre so i can copy it  -->
                         <div class="whitespace-pre-wrap">
-                            <pre tabindex="0" class="copy-code dropQuestion">You said:i'm trying make an extension to add to chrome that will apply my letter focus scripts, above are the html
+                            <pre tabindex="0" class="copy-code drop-question">You said:i'm trying make an extension to add to chrome that will apply my letter focus scripts, above are the html
 
 want to target, the divs with a role="heading" are the main search results on googles, the a tage with the
 data-agch="HJ3bqe" are the heading sub results, i would love to target both so that if i press the first letter in one
@@ -67,115 +72,23 @@ if shift + that letter is pressed, how can i write a script for this and make it
                         </div>
                     </div>
                 </article>
-                <article class="text-token-text-primary answer-txt">
+                <!-- <article class="text-token-text-primary answer-txt show"> -->
+                <article class="text-token-text-primary answer-txt ">
+                <article class="text-token-text-primary answer-txt ">
                     <h6 class="sr-only">Chat Gpt Said: </h6>
                     <div class="text-base">
                         <!-- .markdown .prose is 5th inner child of the 2nd child element 
                                                                     '.group/conversation-turn' of .text-base   -->
                         <div class="markdown prose">
-                            <h3>1. Pure CSS Approach (Best for Static Layouts)</h3>
                             <p>
-                                If you just need the element to always be the full height of the viewport:
+                                To implement this Chrome extension, follow these steps:
+                            </p>
+                            <h3>1. Create the Manifest File (manifest.json)</h3>
+                            <p>
+                                This defines the extension's permissions and scripts.
                             </p>
                             <div class="code-container">
                                 <pre tabindex="0" class="copy-code">
-.full-height {
-    height: 100vh; /* Full viewport height */
-    overflow: auto; /* Scrollable if content overflows */
-}
-                                </pre>
-                            </div>
-                            <p>If the element is inside a <span class="mdtxt"><strong>parent</strong></span> container, you may
-                                need:</p>
-                            <div class="code-container">
-                                <pre tabindex="0" class="copy-code">
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.container {
-    <span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
-    display: flex; /* Optional: for centering content */
-    align-items: center;
-    justify-content: center;
-}        
-</pre>
-                            </div>
-                            <h3>2. JavaScript Approach (Handles Dynamic Changes)</h3>
-                            <p>
-                                If the element’s height needs to dynamically adjust when the window resizes:
-                            </p>
-        
-                            <div class="code-container">
-                                <pre tabindex="0" class="copy-code">
-                                    function setFullHeight() {
-                                    const element = document.querySelector('.full-height');
-                                    if (element) {
-                                    element.style.height = `${window.innerHeight}px`;
-                                    }
-                                    }
-        
-                                    // Run on load and resize
-                                    window.addEventListener('load', setFullHeight);
-                                    window.addEventListener('resize', setFullHeight);
-        
-                                </pre>
-                            </div>
-        
-                            <p>
-                                <strong>Alternative Fix:</strong> Using a Single Event Listener
-                                Instead of attaching an event listener to each .copy-code element, delegate it to the
-                                document:
-                            </p>
-                            <div class="code-container">
-                                <pre tabindex="0" class="copy-code">
-                                    document.addEventListener('keydown', e => {
-                                    let letter = e.key.toLowerCase()
-                                    if (letter == 'enter') {
-                                    if (e.target.classList.contains('copy-code')) {
-                                    e.preventDefault()
-                                    toggleImgVid(e)
-                                    return // Prevent further execution
-                                    }
-                                    toggleImgVid(e)
-                                    addTabIndexes(e)
-                                    }
-                                    })</pre>
-                            </div>
-                            <p>
-                                This avoids multiple event listeners and prevents duplicate execution.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <!-- ------------------------------------------------------- -->
-        
-
-        
-       
-       
-
-
-
-
-
-<!-- Next Result -->
-<div class="CCgQ5 vCa9Yd QfkTvb N8QANc Va3FIb EE3Upf" aria-level="3" role="heading"><span>REST News API for
-        Developers</span></div>
-
-ChatGPT said:
-ChatGPT
-Memory updated
-To implement this Chrome extension, follow these steps:
-
-1. Create the Manifest File (manifest.json)
-This defines the extension's permissions and scripts.
-
-json
-Copy
-Edit
 {
   "manifest_version": 3,
   "name": "Google Search Letter Focus",
@@ -195,13 +108,30 @@ Edit
   "action": {
     "default_popup": "popup.html"
   }
+}</pre>
+                            </div>
+                            <h3>2. Create the Content Script (content.js)</h3>
+                            <p>
+                                This script will handle key presses and focus the relevant search results.
+                            </p>
+                                <pre tabindex="0" class="copy-code">
+html, body {
+    height: 100%;
+    margin: 0;
 }
-2. Create the Content Script (content.js)
-This script will handle key presses and focus the relevant search results.
 
-javascript
-Copy
-Edit
+.container {
+    <span class="m">height: 100vh; /* Ensures it fills the viewport */</span>
+    display: flex; /* Optional: for centering content */
+    align-items: center;
+    justify-content: center;
+}        
+</pre>
+                            </div>
+                            <h3>2. JavaScript Approach (Handles Dynamic Changes)</h3>
+                            <p>If the element’s height needs to dynamically adjust when the window resizes:</p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
 let searchResults = [];
 let currentIndexes = {};
 
@@ -232,77 +162,61 @@ document.addEventListener("keydown", (event) => {
 
     // Cycle through matches
     if (currentIndexes[key] >= matchingResults.length) currentIndexes[key] = 0;
-    if (currentIndexes[key] < 0) currentIndexes[key] = matchingResults.length - 1;
+    if (currentIndexes[key] &lt; 0) currentIndexes[key] = matchingResults.length - 1;
 
     let target = matchingResults[currentIndexes[key]];
     target.scrollIntoView({ behavior: "smooth", block: "center" });
     target.focus();
-});
-3. Add a Background Script (background.js)
-This ensures the content script runs when needed.
-
-javascript
-Copy
-Edit
+});</pre>
+                            </div>
+                            <h3>3. Add a Background Script (background.js)</h3>
+                            <p>This ensures the content script runs when needed.</p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
 chrome.runtime.onInstalled.addListener(() => {
     console.log("Google Search Letter Focus Extension Installed");
-});
-4. Create a Popup (Optional)
-Create popup.html for an options menu.
+});</pre>
+                            </div>
+                            <h3>4. Create a Popup (Optional)</h3>
+                            <p>Create popup.html for an options menu.</p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;title>Google Search Letter Focus&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h2>Letter Navigation Active&lt;/h2>
+    &lt;p>Use letter keys to navigate search results.&lt;/p>
+&lt;/body>
+&lt;/html>
+                                    </pre>
+                            </div>
+                            <h3>5. Load the Extension into Chrome</h3>
+                            <p>Open</p>
+                            <div class="code-container">
+                                <pre tabindex="0" class="copy-code">chrome://extensions/</pre>
+                            </div>
+                            <p>
+                                in Chrome.
+                            </p>
+                            <p>
+                                Enable Developer Mode (top-right toggle).
+                                Click Load Unpacked and select your extension folder.
+                                This script will let you cycle through search results using letters. Let me know if you need refinements! 🚀
 
-html
-Copy
-Edit
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Google Search Letter Focus</title>
-</head>
-<body>
-    <h2>Letter Navigation Active</h2>
-    <p>Use letter keys to navigate search results.</p>
-</body>
-</html>
-5. Load the Extension into Chrome
-Open chrome://extensions/ in Chrome.
-Enable Developer Mode (top-right toggle).
-Click Load Unpacked and select your extension folder.
-This script will let you cycle through search results using letters. Let me know if you need refinements! 🚀
-
-
-
-
-
-
-
-You said:
-do i put all of the above scripts into a directory
-ChatGPT said:
-ChatGPT
-Yes! You'll need to organize the files into a directory to properly structure your Chrome extension. Here’s how your directory should look:
-
-arduino
-Copy
-Edit
-google-letter-focus-extension/
-│── manifest.json
-│── content.js
-│── background.js
-│── popup.html  (optional)
-Steps to Set Up:
-Create a new folder on your computer, e.g., google-letter-focus-extension.
-Inside the folder, create the following files and copy the respective script content:
-manifest.json
-content.js
-background.js
-popup.html (optional, only needed if you want a UI popup)
-Load it into Chrome:
-Open Chrome and go to chrome://extensions/
-Enable Developer mode (toggle in the top-right corner).
-Click "Load unpacked" and select the google-letter-focus-extension directory.
-The extension should now be active!
-Let me know if you need further guidance! 🚀
-       </pre>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <h1 class="r">Add question 2 from <code>Question 2.txt</code> 
+                in this directory 
+                <br>HERE X
+                <br>to the left, have question side alternate down the page
+            </h1>
+            <!-- ------------------------------------------------------- -->
     </main>
     
 </body>
