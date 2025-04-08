@@ -23,7 +23,6 @@ export function letterFocus() {
 
     function updateIdElsArr(){
         idElsArr = Array.from(document.querySelectorAll('[id]'))
-        // idElsArr.indexOf(el) > focusedIndex
     }
     updateIdElsArr()
     addEventListener('keydown', (e) => {
@@ -60,14 +59,8 @@ export function letterFocus() {
         }
         letteredArr[iLetter].focus()
         lastPressedLetter = letter;
-
-        
-        
-        
     });
-    
 }
-
 function questionNumFocus(e,letter){
     // get question-answer parent of current element when .question-txt .dropQuestion has focus and answers
     // are showing
@@ -80,7 +73,6 @@ function questionNumFocus(e,letter){
         if(intLet > h3s.length){
             return
         } else {
-
             h3s.forEach(h3 => {
                 h3.setAttribute('tabindex',0)
             })
