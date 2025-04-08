@@ -17,7 +17,7 @@ export function handleQuestions(){
         }))
     }
     // hideAnswers()
-    
+
     dropQuestions.forEach(el => {
         el.addEventListener('click', e => {
             console.log(e.target)

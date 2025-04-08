@@ -1,7 +1,7 @@
 export function letterFocus() {
-    let letteredEls = [];
+    let idElsArr = []
     let iLetter = 0;
-    let currentLetter = '';
+    let lastPressedLetter = '';
     const questionAnswers = document.querySelectorAll('.question-answer')
     let questionAnswersFocused = false
     const allAnswerH3s = document.querySelectorAll('.answer-txt h3')
@@ -9,52 +9,6 @@ export function letterFocus() {
     drop-topics are the topics within inject page, which is topics from the side menu named 
     .dropTopics in index.js */
     const dropTopics = document.querySelectorAll('.drop-topics')
-
-    addEventListener('keydown', (e) => {
-        const allFocusEls = document.querySelectorAll('[id]');
-        let letter = e.key.toLowerCase();
-
-        
-        if(!questionAnswersFocused){
-            if (letter == 'm' && e.target.id == 'mainTargetDiv'){
-                scrollTo(0,0)
-            }
-            // Rebuild the array of elements matching the first letter
-            letteredEls = [];
-            allFocusEls.forEach(el => {
-                if (el.id[0].toLowerCase() === letter) {
-                    letteredEls.push(el);
-                }
-            });
-
-            if (letteredEls.length === 0) return; // Exit if no elements match
-
-            // If pressing a different letter, reset the index
-            if (letter !== currentLetter) {
-                iLetter = 0;
-            } else {
-                if (!e.shiftKey) {
-                    // Move forward
-                    iLetter = (iLetter + 1) % letteredEls.length;
-                } else {
-                    // Move backward correctly
-                    iLetter = (iLetter - 1 + letteredEls.length) % letteredEls.length;
-                }
-            }
-
-            // Focus on the correct element
-            letteredEls[iLetter].focus();
-
-            // Update current letter for next key press
-            currentLetter = letter;
-        } else {
-            if(!isNaN(letter)){
-                questionNumFocus(e,letter)
-            }
-            return
-        }
-        
-    });
     questionAnswers.forEach(el => {
         el.addEventListener('focusin', e => {
             questionAnswersFocused = true
@@ -66,6 +20,52 @@ export function letterFocus() {
             questionAnswersFocused = false
         })
     })
+
+    function updateIdElsArr(){
+        idElsArr = Array.from(document.querySelectorAll('[id]'))
+        // idElsArr.indexOf(el) > focusedIndex
+    }
+    updateIdElsArr()
+    addEventListener('keydown', (e) => {
+        let letter = e.key.toLowerCase();
+        let letteredArr = idElsArr.filter(word => word.id.startsWith(letter))
+        
+        if(letteredArr.length == 0){
+            if (!questionAnswersFocused) {
+                if (letter == 'm' && e.target.id == 'mainTargetDiv') {
+                    scrollTo(0, 0)
+                }
+
+            } else {
+                if (!isNaN(letter)) {
+                    questionNumFocus(e, letter)
+                }
+                return
+            }
+            return
+        } 
+        else {    
+            let focusedEl = document.activeElement
+            let iFocused = idElsArr.indexOf(focusedEl)
+            // console.log(iFocused)
+            // console.log(letteredArr.findIndex(el => idElsArr.indexOf(el) > iFocused))
+
+            if (lastPressedLetter !== letter) {
+                console.log(letter)
+                let closestIndex = letteredArr.findIndex(el => idElsArr.indexOf(el) > iFocused)
+                iLetter = closestIndex !== -1 ? closestIndex : 0
+            } else {
+                iLetter = (letteredArr.indexOf(iFocused) - 1) % letteredArr.length;
+            }
+        }
+        letteredArr[iLetter].focus()
+        lastPressedLetter = letter;
+
+        
+        
+        
+    });
+    
 }
 
 function questionNumFocus(e,letter){
@@ -89,12 +89,6 @@ function questionNumFocus(e,letter){
 
     }
 }
-
-function removeTabIndexes(els) {
-    els.forEach(el => {
-        el.removeAttribute('tabindex')
-    })
-}
 function getQuestionAnswer(parent){
     if(parent.classList.contains('question-answer')){
         return parent
@@ -104,5 +98,4 @@ function getQuestionAnswer(parent){
         return null
     }
 }
-
 letterFocus();
