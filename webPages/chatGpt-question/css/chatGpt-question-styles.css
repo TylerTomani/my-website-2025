@@ -1,3 +1,4 @@
+
 .question-answer {
     margin: 0 2.5%;
     color: black;
@@ -10,8 +11,7 @@
     border: 1px solid whitesmoke;
 
 }
-.question-txt > .text-base .copy-code,
-.question-txt > .text-base .copy-code:nth-child(odd) {
+.question-txt > .text-base .drop-question   {
     background-color: white;
     white-space: normal;
     width: fit-content;
@@ -32,25 +32,11 @@ header article p {
     line-height: .98;
     font-size: 1.1rem;
 }
-.copy-code {
-    
-}
 .topics-questions {
     margin: 0 1.5%;
 }
 /* .dropQuestion */
-.drop-topic {
-    text-decoration: none;
-    color: white;
-    width: 80%;
-    border: 1px solid black;
-    border: white 1px solid ;
-    display: inline-block;
-    padding: 1%;
-    padding-left: 2%;
-    padding-right: 5%;
-    margin-bottom: 1%;
-}
+
 .question-answer{
     color: white;
     display: flex;
@@ -101,12 +87,12 @@ header article p {
     body {
         /* position: relative; */
     }
-    .question-txt > .text-base .copy-code,
-    .question-txt > .text-base .copy-code:nth-child(odd) {
+    main > .question-answer > .question-txt > .text-base > .whitespace-pre-wrap > .drop-question,
+    main > .question-answer > .question-txt > .text-base > .whitespace-pre-wrap > .drop-question:nth-child(odd) {
         margin-right: 2.5%;
     }   
-    .question-txt > .text-base .copy-code,
-    .question-txt > .text-base .copy-code:nth-child(even) {
+    .drop-question:nth-of-type(even) {
         margin-left: 5%;
+        border: 20px solid red ;
     }   
 }
