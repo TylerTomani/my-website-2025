@@ -74,6 +74,9 @@ main > .topic{
     width: 100%;
     height: 90%;
 }
+#mostUsefulPages{
+    box-shadow: -1px 0 2px 2px orange;
+}
 .hide{
     display: none ;
 }
