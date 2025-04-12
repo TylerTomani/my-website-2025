@@ -10,23 +10,17 @@ body {
     /* background: linear-gradient(to bottom,
     #192752,#192752,
     #192752,#b1b4bb, #5d6c26, #8a8034,
-    #192752); */
-    
+    #192752); */   
 }
-
 header{
     display: flex;
-    /* background: repeating-linear-gradient(200deg,#3cd4f6, #ebf8e1 15%,#1f3741  90%); */
-    /* background: repeating-linear-gradient(#e66465,
-    #f69d3c 20px,
-    #9198e5 20px,
-    #9198e5 25px); */
-    color: rgb(209, 233, 236);
+    background: repeating-linear-gradient(100deg,darkorange, white 1%,#1f3741  90%);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 header h1{
      /* border: 2px solid black; */
-    color: blue;
+    color: #484230;
+    font-size: 200%;
 }
 header > .topics-container {
     font-size: 60%;
@@ -53,6 +47,15 @@ main > .topic a {
 main > .topic{
     margin: 1%;
 }
+.topic > a.drop-topic{
+    width: 90%;
+    padding: 0;
+    padding-left: 2%;
+    border: 1px solid black;
+    border-right: 1px solid yellow;
+    border-bottom: 1px solid yellow;
+    box-shadow: 1px 2px 1px 1px white;
+}
 .topic > a.drop-topic,
 .drop-sub-topic {
     display: inline-flex;
@@ -62,7 +65,7 @@ main > .topic{
 .drop-topic:focus,
 .project:active,
 .project:focus {
-    box-shadow: 2px 2px 2px 2px lime ;
+    /* box-shadow: 2px 2px 2px 2px lime ; */
 }
 .topics-container {
     color: blue;
@@ -109,7 +112,9 @@ main > .topic{
     flex-direction: column;
     margin: 1.5% 1.5%;
     margin-left: 2.5%;
-    background-color: lightgrey;
+    padding-left: 2.5%;
+    /* background-color: lightgrey; */
+
     border: 1px solid black;
     font-size: 70%;
     color: black;
@@ -124,10 +129,8 @@ main > .topic{
 #mostUsefulPages{
     /* box-shadow: -1px 0 2px 2px orange; */
 }
-.topics-container  > .project-page {
-    float: right;
-    border: 2px solid black;
-    /* border: 2px solid orange; */
+ .project-page {
+    
 }
 .hide{
     display: none ;
