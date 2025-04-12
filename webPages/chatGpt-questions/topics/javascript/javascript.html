@@ -2,7 +2,145 @@
 <div class="topics-questions">
     <!-- Letter Focus Perfect -->
     <div class="topic">
-        <a id="letterFocus perfet ids" tabindex="0" href="#" class="drop-topic questions-topic">letterFocus perfect
+        <a id="autofocusSomeForLoop " tabindex="0" href="#" class="drop-topic questions-topic">autofocus some() vs forLoop() ..
+        </a>
+        <div class="questions-container">
+            <div class="question-container">
+                <!-- Below in the the articles are the same format is chatgpt -->
+                <!-- I'm keeping the html the same but adding the classes:
+                       questions-answer, question-txt, answer-txt-->
+                <div class="answer question-answer">
+                    <article class="text-token-text-primary question-txt">
+                        <h6 class="sr-only">autofocus some() vs forLoop() and Default href on load</h6>
+                        <div class="text-base">
+                            <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
+                                             it to a pre so i can copy it  -->
+                            <div class="whitespace-pre-wrap">
+                                <pre tabindex="0" class="copy-code dropQuestion">
+Thanks I realized it was actually working but my home.html was named wrongs, i had it like this 
+<strong class="r">located inside</strong> <a target="_blank" href="../../js/questionsLoadOg.js">js/questionsLoadOg</a>
+topics.forEach(el => {
+    if(el.hasAttribute('autofocus')){
+        fetchLessonHref(el.href)
+        console.log(el.href)
+    } else {
+        fetchLessonHref(home.html)
+    }
+    el.addEventListener('focusout', e => {
+        clicked = false
+    })
+    el.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        fetchLessonHref(e.target.href)
+        if(!clicked){
+            clicked = true
+        } else
+        if(clicked){
+            mainTargetDiv.focus()
+
+        } 
+    })
+})
+
+But do you think the some() method is  better? some() is called a method right?</pre>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="text-token-text-primary answer-txt">
+                        <h6 class="sr-only">Chat Gpt Said: </h6>
+                        <div class="text-base">
+                            <!-- .markdown .prose is 5th inner child of the 2nd child element 
+                                                            '.group/conversation-turn' of .text-base   -->
+                            <div class="markdown prose">
+                                <p>
+                                    Good catch on the filename — those little things are sneaky sometimes!
+                                </p>
+                                <p>
+                                    And yes — some() is a method! It’s an array method that returns true if at least one element in the array satisfies the
+                                    provided test function. It’s super clean for situations like this where you're just checking “hey, is there at least one
+                                    element like this?”
+                                </p>
+                                <h2>🔍 Comparing your forEach vs some():</h2>
+                                <p>Here’s what’s happening in your version:</p>
+                                <div class="code-container">
+                                    <pre tabindex="-1" class="copy-code r strike" >
+topics.forEach(el => {
+    if(el.hasAttribute('autofocus')){
+        fetchLessonHref(el.href)
+        console.log(el.href)
+    } else {
+        fetchLessonHref(`home.html`)
+    }
+})</pre>
+                                </div>
+                                <h4>Problem:</h4>
+                                <ul>
+                                    <li>It loops through every topic.</li>
+                                    <li>It fetches either the element’s href or home.html for each one — which means you might fetch multiple times on load (one
+                                        for each element).</li>
+                                </ul>
+                                <h4>If your goal is to fetch only once:</h4>
+                                <ul>
+                                    <li>If one has autofocus, fetch that and stop.</li>
+                                    <li>Otherwise, fetch home.html.</li>
+                                </ul>
+                                <h3>Then yes — using .some() is more efficient and semantically clearer.</h3></h3>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="">
+const hasAutoFocus = Array.from(topics).some(el => {
+    if (el.hasAttribute('autofocus')) {
+        fetchLessonHref(el.href)
+        console.log(el.href)
+        return true // stops the some() loop right here
+    }
+    return false
+})
+
+if (!hasAutoFocus) {
+    fetchLessonHref('home.html')
+}
+                                    </pre>
+                                </div>
+                                <h3 class="r">**Make Drop down for full code, where this is 
+                                    <a style="color: magenta;" href="../../js/questionsLoad.js">questionLoad.js</a>
+                                </h3>
+                                <h4>Why this is better:</h4>
+                                <ul>
+                                    <li>some() stops looping as soon as it finds a match.</li>
+                                    <li>No redundant fetches.</li>
+                                    <li>Clear intent: if any element has autofocus, load it — otherwise load home.html</li>
+                                </ul>
+                                <h3>✅ Is .some() a method?</h3>
+                                <p>Yes — <strong>officially</strong>:</p>
+                                <ul>
+                                    <li>It’s an Array.prototype method.</li>
+                                    <li>Its job is to test whether at least one element in an array passes the test implemented by the provided function.</li>
+                                    <li>It returns a boolean — true or false.</li>
+                                </ul>
+                                <div class="code-container">
+                                    <pre tabindex="0" class="copy-code">
+[1, 2, 3].some(num => num > 2) // returns true</pre>
+                                </div>
+                                <h3>📚 If you’re curious — related array methods:</h3>
+                                <ul>
+                                    <li>.some() → checks for at least one passing item.</li>
+                                    <li>.every() → checks if all items pass.</li>
+                                    <li>.find() → returns the first matching item, or undefined.</li>
+                                    <li>.filter() → returns all matching items in a new array.</li>
+                                    <li>.map() → transforms all items into something else.</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </article>
+                </div>    
+                <!-- ------------------------------------------------------- -->
+            </div>
+        </div>
+    </div>
+    <div class="topic">
+        <a id="letterFocus" tabindex="0" href="#" class="drop-topic questions-topic">letterFocus perfect
         </a>
         <div class="questions-container">
             <div class="question-container">

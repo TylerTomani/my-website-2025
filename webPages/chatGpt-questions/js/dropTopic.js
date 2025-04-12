@@ -39,6 +39,8 @@ export function DropTopics(){
             const topic = getTopic(el.parentElement)
             const questionsContainer = topic.querySelector('.questions-container')
             questionsContainer.classList.add('hide')
+            if(!questionsContainer.classList.contains('show')){
+            } else console.log(questionsContainer)
         })
     }
     hideAllTopicQuestionsContainers()

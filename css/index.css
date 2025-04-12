@@ -9,6 +9,7 @@ main{
     margin: 1%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20%;
 }
 main > .topic{
     margin: 1%;
@@ -76,6 +77,9 @@ main > .topic{
 }
 #mostUsefulPages{
     box-shadow: -1px 0 2px 2px orange;
+}
+.project-page {
+    border: 2px solid orange;
 }
 .hide{
     display: none ;

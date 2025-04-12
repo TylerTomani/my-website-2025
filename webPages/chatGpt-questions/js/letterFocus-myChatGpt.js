@@ -57,7 +57,9 @@ export function letterFocus() {
                 iLetter = (letteredArr.indexOf(iFocused) - 1) % letteredArr.length;
             }
         }
-        letteredArr[iLetter].focus()
+        if(letteredArr[iLetter]){
+            letteredArr[iLetter].focus()
+        }
         lastPressedLetter = letter;
     });
 }
