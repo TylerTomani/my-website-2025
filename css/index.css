@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background: linear-gradient();
+}
 /* header{display: flex;} */
 header > .vid-container{border: 1px solid black;}
 main{
