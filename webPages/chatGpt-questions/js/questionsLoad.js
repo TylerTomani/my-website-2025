@@ -1,7 +1,7 @@
 export const mainTargetDiv = document.getElementById('mainTargetDiv')
 import { addCopyCodes } from "./copy-code-export.js"
 import { handleQuestions } from "./toggleQuestions.js"
-import { DropTopics } from "./dropTopic.js"
+import { ToggleTopicQuestions } from "./toggleTopicQuestions.js"
 import { letterFocus } from "./letterFocus-myChatGpt.js"
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainTargetDiv.innerHTML = html
                 addCopyCodes()
                 handleQuestions()
-                DropTopics()
+                ToggleTopicQuestions()
                 letterFocus()
             })
             .catch(error => console.log('Error fetching content.html:', error))

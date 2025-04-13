@@ -1,5 +1,5 @@
 import { mainTargetDiv } from "./questionsLoad.js";
-export function DropTopics(){
+export function ToggleTopicQuestions(){
     const dropTopics = document.querySelectorAll('.drop-topic');
     let mainTargetDivFocused = false
     mainTargetDiv.addEventListener('focusin', e => {
@@ -10,10 +10,8 @@ export function DropTopics(){
 
     })
     addEventListener('keydown', e => {
-        let letter = e.key.toLowerCase()
-        
+        let letter = e.key.toLowerCase()        
         if (mainTargetDivFocused){
-
             dropTopics.forEach(el => {
                 if (letter == el.innerText[0].toLowerCase()) {
                     el.focus()
@@ -23,7 +21,7 @@ export function DropTopics(){
     })
     dropTopics.forEach(el => {
         el.addEventListener('click', e => {
-            // e.preventDefault()
+            e.preventDefault()
             toggleTopicQuestions(e)
         })
         el.addEventListener('keydown', e => {
@@ -38,9 +36,13 @@ export function DropTopics(){
         dropTopics.forEach(el =>  {
             const topic = getTopic(el.parentElement)
             const questionsContainer = topic.querySelector('.questions-container')
-            questionsContainer.classList.add('hide')
             if(!questionsContainer.classList.contains('show')){
-            } else console.log(questionsContainer)
+                questionsContainer.classt.add('hide')
+            
+            } else{
+
+                console.log(questionsContainer)
+            }
         })
     }
     hideAllTopicQuestionsContainers()

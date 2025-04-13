@@ -1,14 +1,15 @@
 
 export function handleQuestions(){
+    // const dropTopics = document.querySelectorAll('.drop-topic')
     const dropQuestions = document.querySelectorAll('.dropQuestion, .drop-question')
-    const questionAnswers = document.querySelectorAll('.question-answer')
+    const questionsContainer = document.querySelectorAll('.questions-container')
     const answersTxt = document.querySelectorAll('.answer-txt')
-    function hideQuestionAnswers() {
-        questionAnswers.forEach(el => {
+    function hideQuestionsContainer() {
+        questionsContainer.forEach(el => {
             el.classList.add('hide')
         })  
     }
-    // hideQuestionAnswers()
+    hideQuestionsContainer()
     function hideAnswers() {
         answersTxt.forEach((el => {
             if(!el.classList.contains('show')){
@@ -17,7 +18,6 @@ export function handleQuestions(){
         }))
     }
     hideAnswers()
-
     dropQuestions.forEach(el => {
         el.addEventListener('click', e => {
             console.log(e.target)
@@ -32,15 +32,54 @@ export function handleQuestions(){
             }
         })
     })
+    
     function toggleAnswer(e) {
         // e.preventDefault()
         const parent = getQuestionAnswerContainer(e.target.parentElement)
         const answerTxt = parent.querySelector('.answer-txt')
-        answerTxt.classList.toggle('hide')
+        if(answerTxt){
+            answerTxt.classList.toggle('hide')
+        }
+        // console.log(parent)
+
+    }
+    // dropTopics.forEach(el => {
+    //     el.addEventListener('click', e => {
+    //         console.log(e.target)
+    //         e.preventDefault()
+    //         toggleTopicQuestion(e)
+    //     })
+    //     el.addEventListener('keydown', e => {
+    //         let letter = e.key.toLowerCase()
+    //         if (letter == 'enter') {
+
+    //             toggleTopicQuestion(e)
+    //         }
+    //     })
+    // })
+    // <a.drop-topic.question-topic
+    function toggleTopicQuestion(e) {
+        // e.preventDefault()
+        // const parent = getTopic(e.target.parentElement)
+        // const questionsContainer = parent.querySelector('.questions-container')
+        // console.log(questionsContainer)
+        // if(questionsContainer){
+        //     questionsContainer.classList.toggle('hide')
+        // }
         // console.log(parent)
 
     }
     
+}
+
+function getTopic(parent){
+    if(parent.classList.contains('topic')){
+        return parent
+    } else if (parent.parentElement){
+        return getTopic(parent.parentElement)
+    } else {
+        return null
+    }
 }
 function getQuestionAnswerContainer(parent){
     if(parent.classList.contains('question-answer')){
