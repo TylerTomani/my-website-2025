@@ -18,7 +18,9 @@ export function handleQuestions(){
         }))
     }
     hideAnswers()
-    dropQuestions.forEach(el => {
+    
+    dropQuestions.forEach((el) => {
+        
         el.addEventListener('click', e => {
             console.log(e.target)
             e.preventDefault()
@@ -43,33 +45,7 @@ export function handleQuestions(){
         // console.log(parent)
 
     }
-    // dropTopics.forEach(el => {
-    //     el.addEventListener('click', e => {
-    //         console.log(e.target)
-    //         e.preventDefault()
-    //         toggleTopicQuestion(e)
-    //     })
-    //     el.addEventListener('keydown', e => {
-    //         let letter = e.key.toLowerCase()
-    //         if (letter == 'enter') {
 
-    //             toggleTopicQuestion(e)
-    //         }
-    //     })
-    // })
-    // <a.drop-topic.question-topic
-    function toggleTopicQuestion(e) {
-        // e.preventDefault()
-        // const parent = getTopic(e.target.parentElement)
-        // const questionsContainer = parent.querySelector('.questions-container')
-        // console.log(questionsContainer)
-        // if(questionsContainer){
-        //     questionsContainer.classList.toggle('hide')
-        // }
-        // console.log(parent)
-
-    }
-    
 }
 
 function getTopic(parent){

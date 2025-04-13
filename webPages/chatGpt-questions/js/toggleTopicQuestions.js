@@ -1,4 +1,5 @@
 import { mainTargetDiv } from "./questionsLoad.js";
+
 export function ToggleTopicQuestions(){
     const dropTopics = document.querySelectorAll('.drop-topic');
     let mainTargetDivFocused = false
