@@ -6,9 +6,8 @@ export function ToggleTopicQuestions(){
     mainTargetDiv.addEventListener('focusin', e => {
         mainTargetDivFocused = true
     })
-    mainTargetDiv.addEventListener('focusin', e => {
+    mainTargetDiv.addEventListener('focusout', e => {
         mainTargetDivFocused = false
-
     })
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()        
@@ -36,14 +35,15 @@ export function ToggleTopicQuestions(){
     function hideAllTopicQuestionsContainers(){
         dropTopics.forEach(el =>  {
             const topic = getTopic(el.parentElement)
-            const questionsContainer = topic.querySelector('.questions-container')
-            if(!questionsContainer.classList.contains('show')){
-                questionsContainer.classt.add('hide')
-            
-            } else{
-
+            if(topic){
+                const questionsContainer = topic.querySelector('.questions-container')
                 console.log(questionsContainer)
-            }
+                if(questionsContainer && !questionsContainer.classList.contains('show')){
+                    questionsContainer.classList.add('hide')   
+                } 
+            } 
+            // else{
+            // }
         })
     }
     hideAllTopicQuestionsContainers()

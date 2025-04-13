@@ -2,7 +2,7 @@ export const mainTargetDiv = document.getElementById('mainTargetDiv')
 import { addCopyCodes } from "./copy-code-export.js"
 import { handleQuestions } from "./toggleQuestions.js"
 import { ToggleTopicQuestions } from "./toggleTopicQuestions.js"
-import { MarginDropQuestions } from "./margin-drop-questions.js"
+// import {MarginDropQuestions}
 import { letterFocus } from "./letterFocus-myChatGpt.js"
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 addCopyCodes()
                 handleQuestions()
                 ToggleTopicQuestions()
-                MarginDropQuestions()
+                // MarginDropQuestions()
                 letterFocus()
             })
             .catch(error => console.log('Error fetching content.html:', error))

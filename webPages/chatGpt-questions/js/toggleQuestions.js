@@ -1,4 +1,3 @@
-
 export function handleQuestions(){
     // const dropTopics = document.querySelectorAll('.drop-topic')
     const dropQuestions = document.querySelectorAll('.dropQuestion, .drop-question')
@@ -6,7 +5,9 @@ export function handleQuestions(){
     const answersTxt = document.querySelectorAll('.answer-txt')
     function hideQuestionsContainer() {
         questionsContainer.forEach(el => {
-            el.classList.add('hide')
+            if(!el.classList.contains('show')){
+                el.classList.add('hide')
+            }
         })  
     }
     hideQuestionsContainer()
@@ -20,7 +21,6 @@ export function handleQuestions(){
     hideAnswers()
     
     dropQuestions.forEach((el) => {
-        
         el.addEventListener('click', e => {
             console.log(e.target)
             e.preventDefault()
@@ -29,7 +29,6 @@ export function handleQuestions(){
         el.addEventListener('keydown', e => {
             let letter = e.key.toLowerCase()
             if (letter == 'enter') {
-
                 toggleAnswer(e)
             }
         })
