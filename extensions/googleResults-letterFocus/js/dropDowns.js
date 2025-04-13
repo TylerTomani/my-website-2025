@@ -10,7 +10,10 @@ hideQuestion()
 
 dropQuestions.forEach(el => {
     el.addEventListener('keydown', e => {
-        toggleQuestion(e)
+        let letter = e.key.toLowerCase()
+        if(letter == 'enter'){   
+            toggleQuestion(e)
+        }
 
     })
 })

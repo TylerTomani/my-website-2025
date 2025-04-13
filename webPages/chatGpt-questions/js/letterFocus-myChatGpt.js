@@ -19,15 +19,19 @@ export function letterFocus() {
         if (letteredEls.length === 0) return; // Exit if no elements match
 
         // If pressing a different letter, reset the index
-        if (letter !== currentLetter) {
-            iLetter = 0;
+        if(e.metaKey){
+            return 
         } else {
-            if (!e.shiftKey) {
-                // Move forward
-                iLetter = (iLetter + 1) % letteredEls.length;
+            if (letter !== currentLetter) {
+                iLetter = 0;
             } else {
-                // Move backward correctly
-                iLetter = (iLetter - 1 + letteredEls.length) % letteredEls.length;
+                if (!e.shiftKey) {
+                    // Move forward
+                    iLetter = (iLetter + 1) % letteredEls.length;
+                } else {
+                    // Move backward correctly
+                    iLetter = (iLetter - 1 + letteredEls.length) % letteredEls.length;
+                }
             }
         }
 

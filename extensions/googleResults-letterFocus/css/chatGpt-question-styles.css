@@ -55,6 +55,9 @@ header article p {
     padding: 1% 1.5%;
     padding-top: 1.5%;
 }
+.copy-code:active,.copy-code:focus{
+    box-shadow: 2px 2px 4px 4px yellow;
+}
 .hide {
     display: none !important;
 }
