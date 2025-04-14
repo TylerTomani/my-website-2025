@@ -1,6 +1,7 @@
+
 export function MarginDropQuestions(){
     const dropQuestions = document.querySelectorAll('.drop-question')
-    console.log(dropQuestions[0])
+    console.log(dropQuestions)
     dropQuestions.forEach((el, i) => {
         console.log(el)
         if (i == 0 || i % 2 == 0) {

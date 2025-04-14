@@ -37,13 +37,10 @@ export function ToggleTopicQuestions(){
             const topic = getTopic(el.parentElement)
             if(topic){
                 const questionsContainer = topic.querySelector('.questions-container')
-                console.log(questionsContainer)
                 if(questionsContainer && !questionsContainer.classList.contains('show')){
                     questionsContainer.classList.add('hide')   
                 } 
             } 
-            // else{
-            // }
         })
     }
     hideAllTopicQuestionsContainers()

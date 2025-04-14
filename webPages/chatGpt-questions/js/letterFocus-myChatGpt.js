@@ -33,10 +33,10 @@ export function letterFocus() {
                     iLetter = (iLetter - 1 + letteredEls.length) % letteredEls.length;
                 }
             }
+            letteredEls[iLetter].focus();
         }
 
         // Focus on the correct element
-        letteredEls[iLetter].focus();
 
         // Update current letter for next key press
         currentLetter = letter;
