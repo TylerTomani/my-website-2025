@@ -15,8 +15,9 @@
     padding: 1%;
     padding-left: 2%;
     padding-right: 5%;
-    margin-bottom: 2.5%;
-    border-bottom: 1px solid whitei;
+    margin-bottom: 3.5%;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
 }
 .question-answer{
     color: black;
@@ -55,7 +56,6 @@
 .question-txt >.text-base>.whitespace-pre-wrap> .copy-code {
     white-space: normal;
     /* width: 100%; */
-    border: 2px solid orange;
     /* padding: 1% 2%; */
     /* text-wrap: wrap; */
     /* white-space: wrap; */

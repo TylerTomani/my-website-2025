@@ -29,8 +29,8 @@
         <a id="homelink" href="../../index.html">home</a>
         <h1>My Chat Gpt Questions</h1>
     </header>
-    <nav class="flex flex-col chatgpt-nav-icons">
-        <div class="flex justify-between flex h-[60px] items-center md:h-header-height">
+    <nav class="chatgpt-nav-icons">
+        <div class="flex justify-between ">
             <!-- / sideToggleBtn -->
             <span class="flex" data-state="closed">
                 <button tabindex="0" id="sideToggleBtn" aria-label="Close sidebar" data-testid="close-sidebar-button"
@@ -80,7 +80,9 @@
                 <li><a  id="github" href="topics/github/github.html">Github</a>
         
                 </li>
-                <li><a  id="javascript" href="topics/javascript/javascript.html">Javascript</a>
+                <li><a  id="javascript" href="topics/javascript/javascript.html">Javascript
+                    <br> <sup>*drop? to 'Inject...
+                    </sup></a>
                     <!-- NOT SURE if  want drop down here with sub section or have sub sections appear 
                      in javascript, github, css.html .... -->
                     <ul>
@@ -90,19 +92,21 @@
                 <li><a   id="css" href="topics/css/css.html">css</a>
                     
                 </li>
+                <h2><a id="favorites" href="#" >Favorites 
+                    <br><sup>make 
+                     <br>  *drop?? </sup> </a></h2>
+                <ul class="topic-container">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+            
+                </ul>
+                <h2><a id="dates" href="#">Dates</a></h2>
+                <div class="topic-container">
+                    make this part link to your chat gpt account
+            
+                </div>
             </ul>
-            <h2>Favorites</h2>
-            <ul class="topic-container">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-        
-            </ul>
-            <h2>Dates</h2>
-            <div class="topic-container">
-                make this part link to your chat gpt account
-        
-            </div>
         </aside>
         <div tabindex="0" id="mainTargetDiv">
             <h3>Keep most recent Question here</h3>
