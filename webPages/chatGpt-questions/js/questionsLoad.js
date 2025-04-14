@@ -6,7 +6,7 @@ import {MarginDropQuestions} from "./margin-drop-questions.js"
 import { letterFocus } from "./letterFocus-myChatGpt.js"
 document.addEventListener('DOMContentLoaded', () => {
 
-    const topics = document.querySelectorAll('.topics-container > li > a')
+    const topics = document.querySelectorAll('.sidebar-topics-container > li > a')
     let clicked = false
 
     topics.forEach(el => {
@@ -60,5 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasAutoFocus = Array.from(topics).some(el => el.hasAttribute('autofocus'))
     if (!hasAutoFocus) {
         fetchLessonHref('home.html')
+    } else {
+        fetchLessonHref()
     }
 })

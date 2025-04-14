@@ -7,16 +7,16 @@
 }
 /* .dropQuestion */
 .drop-topic {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
     color: white;
     width: 80%;
-    border: 1px solid black;
-    border: white 1px solid ;
     display: inline-block;
     padding: 1%;
     padding-left: 2%;
     padding-right: 5%;
-    margin-bottom: 1.5%;
+    margin-bottom: 2.5%;
+    border-bottom: 1px solid whitei;
 }
 .question-answer{
     color: black;
@@ -35,15 +35,17 @@
 .question-answer >.question-txt{
     color: black;
     border-radius: 10px;
-    margin-bottom: 1%;
-    padding: 1%;   
-    margin-left: 30%;
+    /* margin-bottom: 1%; */
+    /* padding: 1%;    */
+    /* margin-left: 30%; */
     
 }
-.question-txt > .text-base > .whitespace-pre-wrap {
+.question-txt > .text-base > .whitespace-pre-wrap > .drop-question{
     background-color: whitesmoke;
     border: 1px solid lavender;
     line-height: 1.33;
+    padding: 1%;
+    max-height: 200px;
     font-style: bold;
     font-weight: 550;
     font-size: 95%;
@@ -52,7 +54,8 @@
 
 .question-txt >.text-base>.whitespace-pre-wrap> .copy-code {
     white-space: normal;
-    width: 100%;
+    /* width: 100%; */
+    border: 2px solid orange;
     /* padding: 1% 2%; */
     /* text-wrap: wrap; */
     /* white-space: wrap; */

@@ -6,6 +6,7 @@
 main {
     display: flex;
     position: relative;;
+    /* flex-direction: column; */
     overflow-x: hidden;
     height: 100vh;    
     background-color: var(--mainTargetDiv-bg);
