@@ -1,7 +1,7 @@
 const questionTxt = document.querySelector('.drop-question')
 const homelink = document.querySelector('#homelink')
 const endToTopBtn = document.querySelector('#endToTopBtn')
-const top = document.querySelector('#top')
+ const top = document.querySelector('#top')
 /* I will figure out how to focus with number to questions in different page that will require unknown 
  amount of questions / drop-questions, probably in myChatgpt project */
 

@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     topics.forEach(el => {
         if (el.hasAttribute('autofocus')) {
             fetchLessonHref(el.href)
-            console.log(el.href)
+        } else {
+                fetchLessonHref('home.html')
         }
         el.addEventListener('focusout', e => {
             clicked = false
@@ -57,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         Then yes — using .some() is more efficient and semantically clearer.
      */
     // Load 'home.html' by default if no link has autofocus
-    const hasAutoFocus = Array.from(topics).some(el => el.hasAttribute('autofocus'))
-    if (!hasAutoFocus) {
-        fetchLessonHref('home.html')
-    } else {
-        fetchLessonHref()
-    }
+    // const hasAutoFocus = Array.from(topics).some(el => el.hasAttribute('autofocus'))
+    // if (!hasAutoFocus) {
+    //     fetchLessonHref('home.html')
+    // } else {
+    //     fetchLessonHref()
+    // }
 })

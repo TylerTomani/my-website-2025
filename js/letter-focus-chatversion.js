@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nextLink = matchingLinks[lastFocusedIndex[pressedKey]];
             nextLink.focus();
+            nextLink.scrollIntoView({ behavior: 'smooth', inline: "nearest" });
         }
     });
 });

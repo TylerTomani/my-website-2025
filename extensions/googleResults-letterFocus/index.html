@@ -6,7 +6,7 @@
     <title>googleResults-letterFocus</title>
     <link rel="stylesheet" href="../../webPages/chatGpt-questions/css/copy-code.css">
     <link rel="stylesheet" href="../../css/single-header.css">
-    <link rel="stylesheet" href="../../css/darkMode.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
 
     <link rel="stylesheet" href="css/colors-myChatgpt.css">
     <link rel="stylesheet" href="css/chatGpt-question-styles.css">    
@@ -14,6 +14,7 @@
      <script src="js/dropDowns.js" defer></script>
     <script type="module" src="js/letterFocus-chatAnswer.js" defer></script>
     <script type="module" src="../../js/copy-code.js" defer></script>
+    <script type="module" src="../../js/dark-mode.js" defer></script>
 
     <script type="module" src="js/margin-drop-questions.js" defer></script>
 </head>
@@ -23,9 +24,16 @@
         <h1>Google Result - Letter Focus</h1>
     </header>
     <main>
-        <h3 style="color:tomato !important"> press 'M' to go to 1st question</h3>
+        <h3 style="color:tomato !important"> press 'M' to go to 1st question "M"ain question</h3>
         <h3 style="color:tomato !important">adjust script accordinly to allow 'M' to go through multiple question </h3>
+        <p style="color:tomato">&emsp;Add numFocus() to each code or #. in answer 'IF'
+            <br>question pre.copy-code.drop-question or whatever is focused && answer is showing. 😀
+        </p>
+        <p style="color:tomato">&emsp;
+            numFocus() to each question 
+        </p>
         <header>
+            <h4>Notes</h4>
             <article>
                 <strong>
                     watch tutorial on <code>filter()</code> and <code>trim()</code>
@@ -47,6 +55,7 @@
         <div class="question-answer">
             <article class="text-token-text-primary question-txt">
                 <div class="text-base">
+                    <h2>1.</h2>
                     <!-- .whitespace-pre-wrap is 8th inner child of .text-base i'm changing 
                                                     it to a pre so i can copy it  -->
                     <div class="whitespace-pre-wrap">
@@ -73,7 +82,7 @@ abore dolores! -->
                 </div>
             </article>
             <!-- <article class="text-token-text-primary answer-txt show"> -->
-            <article class="text-token-text-primary answer-txt ">
+            <article class="text-token-text-primary answer-txt hide">
                 <h6 class="sr-only">Chat Gpt Said: </h6>
                 <div class="text-base">
                     <!-- .markdown .prose is 5th inner child of the 2nd child element 
